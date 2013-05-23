@@ -1,0 +1,499 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass memoir
+\begin_preamble
+\usepackage{fmtcount}
+\usepackage{graphicx}
+
+\renewcommand{\chaptermark}[1]{ \markboth{\textsc{#1}}{} }
+%\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+\makepagestyle{myheadings}
+%  \makeevenhead{myheadings}{\thepage}{\textsc{\chaptername\ \Numberstringnum{\thechapter}}}{}
+  \makeevenhead{myheadings}{}{\textsc{\chaptername\ \thechapter}}{}
+  \makeoddhead{myheadings}{}{\leftmark}{}
+%  \makeheadrule{myheadings}{\textwidth}{0.4pt}
+  \makeevenfoot{myheadings}{\thepage}{}{}
+  \makeoddfoot{myheadings}{}{}{\thepage}
+
+\makechapterstyle{hpmor}{%
+  \chapterstyle{default}
+  \renewcommand*{\chapterheadstart}{}
+  \renewcommand*{\chapnumfont}{\normalfont}
+  \renewcommand*{\printchaptername}{%
+%     \centerline{\chapnumfont \textsc{\chaptername\ \Numberstringnum{\thechapter}}}}
+     \centerline{\chapnumfont \textsc{\chaptername\ \thechapter}}}
+  \renewcommand*{\chapternamenum}{}
+  \renewcommand*{\printchapternum}{}
+  \renewcommand*{\afterchapternum}{%
+    \par\centerline{\parbox{0.5in}{\hrulefill}}\par}
+  \renewcommand*{\printchapternonum}{%
+    \vphantom{\chapnumfont \@chapapp 1}\par
+    \parbox{0.5in}{}\par}
+  \renewcommand*{\chaptitlefont}{\normalfont\LARGE\sffamily}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \centering \chaptitlefont\textsc{##1}}}
+  \renewcommand*{\afterchaptertitle}{\par\vspace\par}
+\chapterstyle{hpmor}
+
+\usepackage{fmtcount}
+\usepackage{changepage} %per cambiare la dimensione del paragrafo
+\usepackage{xcolor} %per il titolo in rosso
+\setlength{\emergencystretch}{3em} %per alcuni problemi di hyphenation
+\usepackage{shapepar} %paragrafi con una certa forma
+\usepackage{url}%url lunga
+\renewcommand*{\parttitlefont}{\normalfont\HUGE\sffamily}
+
+\makeatletter
+\renewcommand\part{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+  \thispagestyle{empty}%
+  \if@twocolumn
+    \onecolumn
+    \@tempswatrue
+  \else
+    \@tempswafalse
+  \fi
+  \null\vfil
+  \secdef\@part\@spart}
+\makeatother
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman Linux Libertine O
+\font_sans Purisa
+\font_typewriter Inconsolata
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf true
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format pdf4
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize custom
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 6in
+\paperheight 9in
+\leftmargin 2.345cm
+\topmargin 3.34cm
+\rightmargin 3.517cm
+\bottommargin 5.08cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle myheadings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+What is Evidence?
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:What-is-Evidence?"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Epigraph
+\begin_inset Quotes eld
+\end_inset
+
+The sentence `snow is white' is 
+\emph on
+true
+\emph default
+ if and only if snow is white.
+\begin_inset Quotes erd
+\end_inset
+
+ — Alfred Tarski
+\end_layout
+
+\begin_layout Epigraph
+\begin_inset Quotes eld
+\end_inset
+
+To say of what is, that it is, or of what is not, that it is not, is 
+\emph on
+true
+\emph default
+.
+\begin_inset Quotes erd
+\end_inset
+
+ — Aristotle, 
+\emph on
+Metaphysics
+\emph default
+ IV
+\end_layout
+
+\begin_layout Standard
+If these two quotes don't seem like a sufficient definition of 
+\begin_inset Quotes eld
+\end_inset
+
+truth
+\begin_inset Quotes erd
+\end_inset
+
+, read 
+\emph on
+The Simple Truth
+\emph default
+.
+ Today I'm going to talk about 
+\begin_inset Quotes eld
+\end_inset
+
+evidence
+\begin_inset Quotes erd
+\end_inset
+
+.
+ (I also intend to discuss beliefs-of-fact, not emotions or morality, as
+ distinguished in 
+\emph on
+Feeling Rational
+\emph default
+.)
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+Feeling Rational
+\emph default
+ (sequence 
+\emph on
+How To Actually Change Your Mind
+\emph default
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Walking along the street, your shoelaces come untied.
+ Shortly thereafter, for some odd reason, you start 
+\emph on
+believing
+\emph default
+ your shoelaces are untied.
+ Light leaves the Sun and strikes your shoelaces and bounces off; some photons
+ enter the pupils of your eyes and strike your retina; the energy of the
+ photons triggers neural impulses; the neural impulses are transmitted to
+ the visual-processing areas of the brain; and there the optical information
+ is processed and reconstructed into a 3D model that is recognized as an
+ untied shoelace.
+ There is a sequence of events, a chain of cause and effect, within the
+ world and your brain, by which you end up believing what you believe.
+ The final outcome of the process is a state of 
+\emph on
+mind
+\emph default
+ which mirrors the state of your actual 
+\emph on
+shoelaces
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+What is 
+\emph on
+evidence?
+\emph default
+ It is an event entangled, by links of cause and effect, with whatever you
+ want to know about.
+ If the target of your inquiry is your shoelaces, for example, then the
+ light entering your pupils is evidence entangled with your shoelaces.
+ This should not be confused with the technical sense of 
+\begin_inset Quotes eld
+\end_inset
+
+entanglement
+\begin_inset Quotes erd
+\end_inset
+
+ used in physics — here I'm just talking about 
+\begin_inset Quotes eld
+\end_inset
+
+entanglement
+\begin_inset Quotes erd
+\end_inset
+
+ in the sense of two things that end up in correlated states because of
+ the links of cause and effect between them.
+\end_layout
+
+\begin_layout Standard
+Not every influence creates the kind of 
+\begin_inset Quotes eld
+\end_inset
+
+entanglement
+\begin_inset Quotes erd
+\end_inset
+
+ required for evidence.
+ It's no help to have a machine that beeps when you enter winning lottery
+ numbers, if the machine 
+\emph on
+also
+\emph default
+ beeps when you enter 
+\emph on
+losing
+\emph default
+ lottery numbers.
+ The light reflected from your shoes would not be useful evidence about
+ your shoelaces, if the photons ended up in the same physical state whether
+ your shoelaces were tied or untied.
+\end_layout
+
+\begin_layout Standard
+To say it abstractly: For an event to be 
+\emph on
+evidence about
+\emph default
+ a target of inquiry, it has to happen 
+\emph on
+differently
+\emph default
+ in a way that's entangled with the 
+\emph on
+different
+\emph default
+ possible states of the target.
+ (To say it technically: There has to be Shannon mutual information between
+ the evidential event and the target of inquiry, relative to your current
+ state of uncertainty about both of them.)
+\end_layout
+
+\begin_layout Standard
+Entanglement can be contagious 
+\emph on
+when processed correctly
+\emph default
+, which is why you need eyes and a brain.
+ If photons reflect off your shoelaces and hit a rock, the rock won't change
+ much.
+ The rock won't reflect the shoelaces in any helpful way; it won't be detectably
+ different depending on whether your shoelaces were tied or untied.
+ This is why rocks are not useful witnesses in court.
+ A photographic film will contract shoelace-entanglement from the incoming
+ photons, so that the photo can itself act as evidence.
+ If your eyes and brain work correctly, 
+\emph on
+you
+\emph default
+ will become tangled up with your own shoelaces.
+\end_layout
+
+\begin_layout Standard
+This is why rationalists put such a heavy premium on the paradoxical-seeming
+ claim that a belief is only really worthwhile if you could, in principle,
+ be persuaded to believe otherwise.
+ If your retina ended up in the same state regardless of what light entered
+ it, you would be blind.
+ Some belief systems, in a rather obvious trick to reinforce themselves,
+ say that certain beliefs are only really worthwhile if you believe them
+ 
+\emph on
+unconditionally
+\emph default
+ — no matter what you see, no matter what you think.
+ Your brain is supposed to end up in the same state regardless.
+ Hence the phrase, 
+\begin_inset Quotes eld
+\end_inset
+
+blind faith
+\begin_inset Quotes erd
+\end_inset
+
+.
+ If what you believe doesn't depend on what you see, you've been blinded
+ as effectively as by poking out your eyeballs.
+\end_layout
+
+\begin_layout Standard
+If your eyes and brain work correctly, your beliefs will end up entangled
+ with the facts.
+ 
+\emph on
+Rational thought produces beliefs which are themselves evidence.
+\end_layout
+
+\begin_layout Standard
+If your tongue speaks truly, your rational beliefs, which are themselves
+ evidence, can act as evidence for someone else.
+ Entanglement can be transmitted through chains of cause and effect — and
+ if you speak, and another hears, that too is cause and effect.
+ When you say 
+\begin_inset Quotes eld
+\end_inset
+
+My shoelaces are untied
+\begin_inset Quotes erd
+\end_inset
+
+ over a cellphone, you're sharing your entanglement with your shoelaces
+ with a friend.
+\end_layout
+
+\begin_layout Standard
+Therefore rational beliefs are contagious, among honest folk who believe
+ each other to be honest.
+ And it's why a claim that your beliefs are 
+\emph on
+not
+\emph default
+ contagious — that you believe for private reasons which are not transmissible
+ — is so suspicious.
+ If your beliefs are entangled with reality, they 
+\emph on
+should
+\emph default
+ be contagious among honest folk.
+\end_layout
+
+\begin_layout Standard
+If your model of reality suggests that the outputs of your thought processes
+ should 
+\emph on
+not
+\emph default
+ be contagious to others, then your model says that your beliefs are not
+ themselves evidence, meaning they are not entangled with reality.
+ You should apply a reflective correction, and stop believing.
+\end_layout
+
+\begin_layout Standard
+Indeed, if you feel, on a 
+\emph on
+gut
+\emph default
+ level, what this all 
+\emph on
+means
+\emph default
+, you will 
+\emph on
+automatically
+\emph default
+ stop believing.
+ Because 
+\begin_inset Quotes eld
+\end_inset
+
+my belief is not entangled with reality
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\emph on
+means
+\emph default
+ 
+\begin_inset Quotes eld
+\end_inset
+
+my belief is not accurate
+\begin_inset Quotes erd
+\end_inset
+
+.
+ As soon as you stop believing 
+\begin_inset Quotes eld
+\end_inset
+
+`snow is white' is true
+\begin_inset Quotes erd
+\end_inset
+
+, you should (automatically!) stop believing 
+\begin_inset Quotes eld
+\end_inset
+
+snow is white
+\begin_inset Quotes erd
+\end_inset
+
+, or something is very wrong.
+\end_layout
+
+\begin_layout Standard
+So go ahead and explain why the kind of thought processes you use systematically
+ produce beliefs that mirror reality.
+ Explain why you think you're 
+\emph on
+rational
+\emph default
+.
+ Why you think that, using thought processes like the ones you use, minds
+ will end up believing 
+\begin_inset Quotes eld
+\end_inset
+
+snow is white
+\begin_inset Quotes erd
+\end_inset
+
+ if and only if snow is white.
+ If you don't believe that the outputs of your thought processes are entangled
+ with reality, why do you believe the outputs of your thought processes?
+ It's the same thing, or it should be.
+\end_layout
+
+\end_body
+\end_document

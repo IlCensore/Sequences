@@ -1,0 +1,416 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass memoir
+\begin_preamble
+\usepackage{fmtcount}
+\usepackage{graphicx}
+
+\renewcommand{\chaptermark}[1]{ \markboth{\textsc{#1}}{} }
+%\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+\makepagestyle{myheadings}
+%  \makeevenhead{myheadings}{\thepage}{\textsc{\chaptername\ \Numberstringnum{\thechapter}}}{}
+  \makeevenhead{myheadings}{}{\textsc{\chaptername\ \thechapter}}{}
+  \makeoddhead{myheadings}{}{\leftmark}{}
+%  \makeheadrule{myheadings}{\textwidth}{0.4pt}
+  \makeevenfoot{myheadings}{\thepage}{}{}
+  \makeoddfoot{myheadings}{}{}{\thepage}
+
+\makechapterstyle{hpmor}{%
+  \chapterstyle{default}
+  \renewcommand*{\chapterheadstart}{}
+  \renewcommand*{\chapnumfont}{\normalfont}
+  \renewcommand*{\printchaptername}{%
+%     \centerline{\chapnumfont \textsc{\chaptername\ \Numberstringnum{\thechapter}}}}
+     \centerline{\chapnumfont \textsc{\chaptername\ \thechapter}}}
+  \renewcommand*{\chapternamenum}{}
+  \renewcommand*{\printchapternum}{}
+  \renewcommand*{\afterchapternum}{%
+    \par\centerline{\parbox{0.5in}{\hrulefill}}\par}
+  \renewcommand*{\printchapternonum}{%
+    \vphantom{\chapnumfont \@chapapp 1}\par
+    \parbox{0.5in}{}\par}
+  \renewcommand*{\chaptitlefont}{\normalfont\LARGE\sffamily}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \centering \chaptitlefont\textsc{##1}}}
+  \renewcommand*{\afterchaptertitle}{\par\vspace\par}
+\chapterstyle{hpmor}
+
+\usepackage{fmtcount}
+\usepackage{changepage} %per cambiare la dimensione del paragrafo
+\usepackage{xcolor} %per il titolo in rosso
+\setlength{\emergencystretch}{3em} %per alcuni problemi di hyphenation
+\usepackage{shapepar} %paragrafi con una certa forma
+\usepackage{url}%url lunga
+\renewcommand*{\parttitlefont}{\normalfont\HUGE\sffamily}
+
+\makeatletter
+\renewcommand\part{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+  \thispagestyle{empty}%
+  \if@twocolumn
+    \onecolumn
+    \@tempswatrue
+  \else
+    \@tempswafalse
+  \fi
+  \null\vfil
+  \secdef\@part\@spart}
+\makeatother
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman Linux Libertine O
+\font_sans Purisa
+\font_typewriter Inconsolata
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf true
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format pdf4
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize custom
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 6in
+\paperheight 9in
+\leftmargin 2.345cm
+\topmargin 3.34cm
+\rightmargin 3.517cm
+\bottommargin 5.08cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle myheadings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+How Much Evidence Does It Take?
+\end_layout
+
+\begin_layout Standard
+Previously, I defined 
+\emph on
+evidence
+\emph default
+ as 
+\begin_inset Quotes eld
+\end_inset
+
+an event entangled, by links of cause and effect, with whatever you want
+ to know about
+\begin_inset Quotes erd
+\end_inset
+
+, and 
+\emph on
+entangled
+\emph default
+ as 
+\begin_inset Quotes eld
+\end_inset
+
+happening differently for different possible states of the target
+\begin_inset Quotes erd
+\end_inset
+
+.
+ So how much entanglement — how much evidence — is required to support a
+ belief?
+\end_layout
+
+\begin_layout Standard
+Let's start with a question simple enough to be mathematical: how hard would
+ you have to entangle yourself with the lottery
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Lotteries: A Waste of Hope (sequence 
+\emph on
+Challenging the Difficult
+\emph default
+).
+\end_layout
+
+\end_inset
+
+ in order to win? Suppose there are seventy balls, drawn without replacement,
+ and six numbers to match for the win.
+ Then there are 131,115,985 possible winning combinations, hence a randomly
+ selected ticket would have a 1/131,115,985 probability of winning (0.0000007%).
+ To win the lottery, you would need evidence 
+\emph on
+selective
+\emph default
+ enough to visibly favor one combination over 131,115,984 alternatives.
+\end_layout
+
+\begin_layout Standard
+Suppose there are some tests you can perform which discriminate, probabilistical
+ly, between winning and losing lottery numbers.
+ For example, you can punch a combination into a little black box that always
+ beeps if the combination is the winner, and has only a 1/4 (25%) chance
+ of beeping if the combination is wrong.
+ In Bayesian
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+An Intuitive Explanation of Bayes' Theorem
+\emph default
+.
+\end_layout
+
+\end_inset
+
+ terms, we would say the 
+\emph on
+likelihood ratio
+\emph default
+ is 4 to 1.
+ This means that the box is 4 times as likely to beep when we punch in a
+ correct combination, compared to how likely it is to beep for an incorrect
+ combination.
+\end_layout
+
+\begin_layout Standard
+There are still a whole lot of possible combinations.
+ If you punch in 20 incorrect combinations, the box will beep on 5 of them
+ by sheer chance (on average).
+ If you punch in all 131,115,985 possible combinations, then while the box
+ is certain to beep for the one winning combination, it will also beep for
+ 32,778,996 losing combinations (on average).
+\end_layout
+
+\begin_layout Standard
+So this box doesn't let you win the lottery, but it's better than nothing.
+ If you used the box, your odds of winning would go from 1 in 131,115,985
+ to 1 in 32,778,997.
+ You've made some progress toward finding your target, the truth, within
+ the huge space of possibilities.
+\end_layout
+
+\begin_layout Standard
+Suppose you can use another black box to test combinations 
+\emph on
+twice
+\emph default
+, 
+\emph on
+independently
+\emph default
+.
+ Both boxes are certain to beep for the winning ticket.
+ But the chance of a box beeping for a losing combination is 1/4 
+\emph on
+independently
+\emph default
+ for each box; hence the chance of 
+\emph on
+both
+\emph default
+ boxes beeping for a losing combination is 1/16.
+ We can say that the 
+\emph on
+cumulative
+\emph default
+ evidence, of two independent tests, has a likelihood ratio of 16:1.
+ The number of losing lottery tickets that pass both tests will be (on average)
+ 8,194,749.
+\end_layout
+
+\begin_layout Standard
+Since there are 131,115,985 possible lottery tickets, you might guess that
+ you need evidence whose strength is around 131,115,985 to 1 — an event,
+ or series of events, which is 131,115,985 times more likely to happen for
+ a winning combination than a losing combination.
+ Actually, this amount of evidence would only be enough to give you an 
+\emph on
+even
+\emph default
+ chance of winning the lottery.
+ Why? Because if you apply a filter of that power to 131 million losing
+ tickets, there will be, on average, one losing ticket that passes the filter.
+ The winning ticket will also pass the filter.
+ So you'll be left with two tickets that passed the filter, only one of
+ them a winner.
+ 50% odds of winning, if you can only buy one ticket.
+\end_layout
+
+\begin_layout Standard
+A better way of viewing the problem: In the beginning, there is 1 winning
+ ticket and 131,115,984 losing tickets, so your odds of winning are 1:131,115,98
+4.
+ If you use a single box, the odds of it beeping are 1 for a winning ticket
+ and 0.25 for a losing ticket.
+ So we multiply 1:131,115,984 by 1:0.25 and get 1:32,778,996.
+ Adding another box of evidence multiplies the odds by 1:0.25 again, so now
+ the odds are 1 winning ticket to 8,194,749 losing tickets.
+\end_layout
+
+\begin_layout Standard
+It is convenient to measure evidence in bits — not like bits on a hard drive,
+ but mathematician's bits, which are conceptually different.
+ Mathematician's bits are the logarithms, base 1/2, of probabilities.
+ For example, if there are four possible outcomes A, B, C, and D, whose
+ probabilities are 50%, 25%, 12.5%, and 12.5%, and I tell you the outcome
+ was 
+\begin_inset Quotes eld
+\end_inset
+
+D
+\begin_inset Quotes erd
+\end_inset
+
+, then I have transmitted three bits of information to you, because I informed
+ you of an outcome whose probability was 1/8.
+\end_layout
+
+\begin_layout Standard
+It so happens that 131,115,984 is slightly less than 2 to the 27th power.
+ So 14 boxes or 28 bits of evidence — an event 268,435,456:1 times more
+ likely to happen if the ticket-hypothesis is true than if it is false —
+ would shift the odds from 1:131,115,984 to 268,435,456:131,115,984, which
+ reduces to 2:1.
+ Odds of 2 to 1 mean two chances to win for each chance to lose, so the
+ 
+\emph on
+probability
+\emph default
+ of winning with 28 bits of evidence is 2/3.
+ Adding another box, another 2 bits of evidence, would take the odds to
+ 8:1.
+ Adding yet another two boxes would take the chance of winning to 128:1.
+\end_layout
+
+\begin_layout Standard
+So if you want to license a 
+\emph on
+strong belief
+\emph default
+ that you will win the lottery — arbitrarily defined as less than a 1% probabili
+ty of being wrong — 34 bits of evidence about the winning combination should
+ do the trick.
+\end_layout
+
+\begin_layout Standard
+In general, the rules for weighing 
+\begin_inset Quotes eld
+\end_inset
+
+how much evidence it takes
+\begin_inset Quotes erd
+\end_inset
+
+ follow a similar pattern: The larger the 
+\emph on
+space of possibilities
+\emph default
+ in which the hypothesis lies, or the more unlikely the hypothesis seems
+ 
+\emph on
+a priori
+\emph default
+ compared to its neighbors, or the more confident you wish to be, the more
+ evidence you need.
+\end_layout
+
+\begin_layout Standard
+You cannot defy the rules; you cannot form accurate beliefs based on inadequate
+ evidence.
+ Let's say you've got 10 boxes lined up in a row, and you start punching
+ combinations into the boxes.
+ You cannot stop on the first combination that gets beeps from all 10 boxes,
+ saying, 
+\begin_inset Quotes eld
+\end_inset
+
+But the odds of that happening for a losing combination are a million to
+ one! I'll just ignore those ivory-tower Bayesian rules and stop here.
+\begin_inset Quotes erd
+\end_inset
+
+ On average, 131 losing tickets will pass such a test for every winner.
+ Considering the space of possibilities and the prior improbability, you
+ jumped to a too-strong conclusion based on insufficient evidence.
+ That's not a pointless bureaucratic regulation, it's math.
+\end_layout
+
+\begin_layout Standard
+Of course, you can still 
+\emph on
+believe
+\emph default
+ based on inadequate evidence, if that is your whim; but you will not be
+ able to believe 
+\emph on
+accurately
+\emph default
+.
+ It is like trying to drive your car without any fuel, because you don't
+ believe in the silly-dilly fuddy-duddy concept that it ought to take fuel
+ to go places.
+ It would be so much more 
+\emph on
+fun
+\emph default
+, and so much less expensive, if we just decided to repeal the law that
+ cars need fuel.
+ Isn't it just obviously better for everyone? Well, you can try, if that
+ is your whim.
+ You can even shut your eyes and pretend the car is moving.
+ But to 
+\emph on
+really
+\emph default
+ arrive at accurate beliefs requires evidence-fuel, and the further you
+ want to go, the more fuel you need.
+\end_layout
+
+\end_body
+\end_document

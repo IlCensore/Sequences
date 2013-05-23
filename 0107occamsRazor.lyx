@@ -1,0 +1,750 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass memoir
+\begin_preamble
+\usepackage{fmtcount}
+\usepackage{graphicx}
+
+\renewcommand{\chaptermark}[1]{ \markboth{\textsc{#1}}{} }
+%\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+\makepagestyle{myheadings}
+%  \makeevenhead{myheadings}{\thepage}{\textsc{\chaptername\ \Numberstringnum{\thechapter}}}{}
+  \makeevenhead{myheadings}{}{\textsc{\chaptername\ \thechapter}}{}
+  \makeoddhead{myheadings}{}{\leftmark}{}
+%  \makeheadrule{myheadings}{\textwidth}{0.4pt}
+  \makeevenfoot{myheadings}{\thepage}{}{}
+  \makeoddfoot{myheadings}{}{}{\thepage}
+
+\makechapterstyle{hpmor}{%
+  \chapterstyle{default}
+  \renewcommand*{\chapterheadstart}{}
+  \renewcommand*{\chapnumfont}{\normalfont}
+  \renewcommand*{\printchaptername}{%
+%     \centerline{\chapnumfont \textsc{\chaptername\ \Numberstringnum{\thechapter}}}}
+     \centerline{\chapnumfont \textsc{\chaptername\ \thechapter}}}
+  \renewcommand*{\chapternamenum}{}
+  \renewcommand*{\printchapternum}{}
+  \renewcommand*{\afterchapternum}{%
+    \par\centerline{\parbox{0.5in}{\hrulefill}}\par}
+  \renewcommand*{\printchapternonum}{%
+    \vphantom{\chapnumfont \@chapapp 1}\par
+    \parbox{0.5in}{}\par}
+  \renewcommand*{\chaptitlefont}{\normalfont\LARGE\sffamily}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \centering \chaptitlefont\textsc{##1}}}
+  \renewcommand*{\afterchaptertitle}{\par\vspace\par}
+\chapterstyle{hpmor}
+
+\usepackage{fmtcount}
+\usepackage{changepage} %per cambiare la dimensione del paragrafo
+\usepackage{xcolor} %per il titolo in rosso
+\setlength{\emergencystretch}{3em} %per alcuni problemi di hyphenation
+\usepackage{shapepar} %paragrafi con una certa forma
+\usepackage{url}%url lunga
+\renewcommand*{\parttitlefont}{\normalfont\HUGE\sffamily}
+
+\makeatletter
+\renewcommand\part{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+  \thispagestyle{empty}%
+  \if@twocolumn
+    \onecolumn
+    \@tempswatrue
+  \else
+    \@tempswafalse
+  \fi
+  \null\vfil
+  \secdef\@part\@spart}
+\makeatother
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman Linux Libertine O
+\font_sans Purisa
+\font_typewriter Inconsolata
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf true
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format pdf4
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize custom
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 6in
+\paperheight 9in
+\leftmargin 2.345cm
+\topmargin 3.34cm
+\rightmargin 3.517cm
+\bottommargin 5.08cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle myheadings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Occam's Razor
+\end_layout
+
+\begin_layout Standard
+The more complex an explanation is, the more evidence you need just to find
+ it in belief-space.
+ (In Traditional Rationality this is often phrased misleadingly,
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+Einstein's Arrogance
+\emph default
+.
+\end_layout
+
+\end_inset
+
+ as 
+\begin_inset Quotes eld
+\end_inset
+
+The more complex a proposition is, the more evidence is required to argue
+ for it.
+\begin_inset Quotes erd
+\end_inset
+
+) How can we measure the complexity of an explanation? How can we determine
+ how much evidence is required?
+\end_layout
+
+\begin_layout Standard
+Occam's Razor is often phrased as 
+\begin_inset Quotes eld
+\end_inset
+
+The simplest explanation that fits the facts.
+\begin_inset Quotes erd
+\end_inset
+
+ Robert Heinlein replied that the simplest explanation is 
+\begin_inset Quotes eld
+\end_inset
+
+The lady down the street is a witch; she did it.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+One observes that the length of an English sentence is not a good way to
+ measure 
+\begin_inset Quotes eld
+\end_inset
+
+complexity
+\begin_inset Quotes erd
+\end_inset
+
+.
+ And 
+\begin_inset Quotes eld
+\end_inset
+
+fitting
+\begin_inset Quotes erd
+\end_inset
+
+ the facts by merely 
+\emph on
+failing to prohibit
+\emph default
+ them is insufficient.
+\end_layout
+
+\begin_layout Standard
+Why, exactly, is the length of an English sentence a poor measure of complexity?
+ Because when you speak a sentence aloud, you are using 
+\emph on
+labels
+\emph default
+ for concepts that the listener shares — the receiver has already stored
+ the complexity in them.
+ Suppose we abbreviated Heinlein's whole sentence as 
+\begin_inset Quotes eld
+\end_inset
+
+Tldtsiawsdi!
+\begin_inset Quotes erd
+\end_inset
+
+ so that the entire explanation can be conveyed in one word; better yet,
+ we'll give it a short arbitrary label like 
+\begin_inset Quotes eld
+\end_inset
+
+Fnord!
+\begin_inset Quotes erd
+\end_inset
+
+ Does this reduce the complexity? No, because you have to tell the listener
+ in advance that 
+\begin_inset Quotes eld
+\end_inset
+
+Tldtsiawsdi!
+\begin_inset Quotes erd
+\end_inset
+
+ stands for 
+\begin_inset Quotes eld
+\end_inset
+
+The lady down the street is a witch; she did it.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Witch
+\begin_inset Quotes erd
+\end_inset
+
+, itself, is a label for some extraordinary assertions — just because we
+ all know what it means doesn't mean the concept is simple.
+\end_layout
+
+\begin_layout Standard
+An enormous bolt of electricity comes out of the sky and hits something,
+ and the Norse tribesfolk say, 
+\begin_inset Quotes eld
+\end_inset
+
+Maybe a really powerful agent was angry and threw a lightning bolt.
+\begin_inset Quotes erd
+\end_inset
+
+ The human brain is the most complex artifact in the known universe.
+ If 
+\emph on
+anger
+\emph default
+ seems simple, it's because we don't see all the neural circuitry that's
+ implementing the emotion.
+ (Imagine trying to explain why 
+\emph on
+Saturday Night Live
+\emph default
+ is funny, to an alien species with no sense of humor.
+ But don't feel superior; you yourself have no sense of fnord.) The complexity
+ of anger, and indeed the complexity of intelligence, was glossed over by
+ the humans who hypothesized Thor the thunder-agent.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+To a human
+\emph default
+, Maxwell's Equations take much longer to explain than Thor.
+ Humans don't have a built-in vocabulary for calculus the way we have a
+ built-in vocabulary for anger.
+ You've got to explain your language, and the language behind the language,
+ and the very concept of mathematics, before you can start on electricity.
+\end_layout
+
+\begin_layout Standard
+And yet it seems that there should be some sense in which Maxwell's Equations
+ are 
+\emph on
+simpler
+\emph default
+ than a human brain, or Thor the thunder-agent.
+\end_layout
+
+\begin_layout Standard
+There is: It's 
+\emph on
+enormously
+\emph default
+ easier (as it turns out) to write a computer program that simulates Maxwell's
+ Equations, compared to a computer program that simulates an intelligent
+ emotional mind like Thor.
+\end_layout
+
+\begin_layout Standard
+The formalism of Solomonoff Induction measures the 
+\begin_inset Quotes eld
+\end_inset
+
+complexity of a description
+\begin_inset Quotes erd
+\end_inset
+
+ by the length of the shortest computer program which produces that description
+ as an output.
+ To talk about the 
+\begin_inset Quotes eld
+\end_inset
+
+shortest computer program
+\begin_inset Quotes erd
+\end_inset
+
+ that does something, you need to specify a space of computer programs,
+ which requires a language and interpreter.
+ Solomonoff Induction uses Turing machines, or rather, bitstrings that specify
+ Turing machines.
+ What if you don't like Turing machines? Then there's only a constant complexity
+ penalty to design your own Universal Turing Machine that interprets whatever
+ code you give it in whatever programming language you like.
+ Different inductive formalisms are penalized by a worst-case constant factor
+ relative to each other, corresponding to the size of a universal interpreter
+ for that formalism.
+\end_layout
+
+\begin_layout Standard
+In the better (IMHO) versions of Solomonoff Induction, the computer program
+ does not produce a deterministic prediction, but assigns probabilities
+ to strings.
+ For example, we could write a program to explain a fair coin by writing
+ a program that assigns equal probabilities to all 
+\begin_inset Formula $2^{N}$
+\end_inset
+
+ strings of length 
+\emph on
+N
+\emph default
+.
+ This is Solomonoff Induction's approach to 
+\emph on
+fitting
+\emph default
+ the observed data.
+ The higher the probability a program assigns to the observed data, the
+ better that program 
+\emph on
+fits
+\emph default
+ the data.
+ And probabilities must sum to 1, so for a program to better 
+\begin_inset Quotes eld
+\end_inset
+
+fit
+\begin_inset Quotes erd
+\end_inset
+
+ one possibility, it must steal probability mass from some other possibility
+ which will then 
+\begin_inset Quotes eld
+\end_inset
+
+fit
+\begin_inset Quotes erd
+\end_inset
+
+ much more poorly.
+ There is no superfair coin that assigns 100% probability to heads and 100%
+ probability to tails.
+\end_layout
+
+\begin_layout Standard
+How do we trade off the fit to the data, against the complexity of the program?
+ If you ignore complexity penalties, and think 
+\emph on
+only
+\emph default
+ about fit, then you will always prefer programs that claim to deterministically
+ predict the data, assign it 100% probability.
+ If the coin shows 
+\begin_inset Quotes eld
+\end_inset
+
+HTTHHT
+\begin_inset Quotes erd
+\end_inset
+
+, then the program which claims that the coin was fixed to show 
+\begin_inset Quotes eld
+\end_inset
+
+HTTHHT
+\begin_inset Quotes erd
+\end_inset
+
+ fits the observed data 64 times better than the program which claims the
+ coin is fair.
+ Conversely, if you ignore fit, and consider 
+\emph on
+only
+\emph default
+ complexity, then the 
+\begin_inset Quotes eld
+\end_inset
+
+fair coin
+\begin_inset Quotes erd
+\end_inset
+
+ hypothesis will always seem simpler than any other hypothesis.
+ Even if the coin turns up 
+\begin_inset Quotes eld
+\end_inset
+
+HTHHTHHHTHHHHTHHHHHT\SpecialChar \ldots{}
+
+\begin_inset Quotes erd
+\end_inset
+
+ Indeed, the fair coin 
+\emph on
+is
+\emph default
+ simpler and it fits this data exactly as well as it fits any other string
+ of 20 coinflips — no more, no less — but we see another hypothesis, seeming
+ not too complicated, that fits the data much better.
+\end_layout
+
+\begin_layout Standard
+If you let a program store one more binary bit of information, it will be
+ able to cut down a space of possibilities by half, and hence assign twice
+ as much probability to all the points in the remaining space.
+ This suggests that one bit of program complexity should cost 
+\emph on
+at least
+\emph default
+ a 
+\begin_inset Quotes eld
+\end_inset
+
+factor of two gain
+\begin_inset Quotes erd
+\end_inset
+
+ in the fit.
+ If you try to design a computer program that explicitly stores an outcome
+ like 
+\begin_inset Quotes eld
+\end_inset
+
+HTTHHT
+\begin_inset Quotes erd
+\end_inset
+
+, the six bits that you lose in complexity must destroy all plausibility
+ gained by a 64-fold improvement in fit.
+ Otherwise, you will sooner or later decide that all fair coins are fixed.
+\end_layout
+
+\begin_layout Standard
+Unless your program is being smart, and 
+\emph on
+compressing
+\emph default
+ the data, it should do no good just to move one bit from the data into
+ the program description.
+\end_layout
+
+\begin_layout Standard
+The way Solomonoff induction works to predict sequences is that you sum
+ up over all allowed computer programs — if any program is allowed, Solomonoff
+ induction becomes uncomputable — with each program having a prior probability
+ of (1/2) to the power of its code length in bits, and each program is further
+ weighted by its fit to all data observed so far.
+ This gives you a weighted mixture of experts that can predict future bits.
+\end_layout
+
+\begin_layout Standard
+The Minimum Message Length formalism is nearly equivalent to Solomonoff
+ induction.
+ You send a string describing a code, and then you send a string describing
+ the data in that code.
+ Whichever explanation leads to the shortest 
+\emph on
+total
+\emph default
+ message is the best.
+ If you think of the set of allowable codes as a space of computer programs,
+ and the code description language as a universal machine, then Minimum
+ Message Length is nearly equivalent to Solomonoff induction.
+ (Nearly, because it chooses the 
+\emph on
+shortest
+\emph default
+ program, rather than summing up over all programs.)
+\end_layout
+
+\begin_layout Standard
+This lets us see clearly the problem with using 
+\begin_inset Quotes eld
+\end_inset
+
+The lady down the street is a witch; she did it
+\begin_inset Quotes erd
+\end_inset
+
+ to explain the pattern in the sequence 
+\begin_inset Quotes eld
+\end_inset
+
+0101010101
+\begin_inset Quotes erd
+\end_inset
+
+.
+ If you're sending a message to a friend, trying to describe the sequence
+ you observed, you would have to say: 
+\begin_inset Quotes eld
+\end_inset
+
+The lady down the street is a witch; she made the sequence come out 0101010101.
+\begin_inset Quotes erd
+\end_inset
+
+ Your accusation of witchcraft wouldn't let you 
+\emph on
+shorten
+\emph default
+ the rest of the message; you would still have to describe, in full detail,
+ the data which her witchery caused.
+\end_layout
+
+\begin_layout Standard
+Witchcraft may fit our observations in the sense of qualitatively 
+\emph on
+permitting
+\emph default
+ them; but this is because witchcraft permits 
+\emph on
+everything
+\emph default
+, like saying 
+\begin_inset Quotes eld
+\end_inset
+
+Phlogiston!
+\begin_inset Quotes erd
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+Fake Causality
+\emph default
+ (sequence 
+\emph on
+Mysterious Answers to Mysterious Questions
+\emph default
+).
+\end_layout
+
+\end_inset
+
+ So, even after you say 
+\begin_inset Quotes eld
+\end_inset
+
+witch
+\begin_inset Quotes erd
+\end_inset
+
+, you still have to describe all the observed data in full detail.
+ You have not 
+\emph on
+compressed the total length of the message describing your observations
+\emph default
+ by transmitting the message about witchcraft; you have simply added a useless
+ prologue, increasing the total length.
+\end_layout
+
+\begin_layout Standard
+The real sneakiness was concealed in the word 
+\begin_inset Quotes eld
+\end_inset
+
+it
+\begin_inset Quotes erd
+\end_inset
+
+ of 
+\begin_inset Quotes eld
+\end_inset
+
+A witch did it
+\begin_inset Quotes erd
+\end_inset
+
+.
+ A witch did 
+\emph on
+what?
+\end_layout
+
+\begin_layout Standard
+Of course, thanks to hindsight bias
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+Hindsight Bias
+\emph default
+ (sequence 
+\emph on
+Mysterious Answers to Mysterious Questions
+\emph default
+).
+\end_layout
+
+\end_inset
+
+ and anchoring
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+Anchoring and Adjustment 
+\emph default
+(sequence 
+\emph on
+How To Actually Change Your Mind
+\emph default
+).
+\end_layout
+
+\end_inset
+
+ and fake explanations
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+Fake Explanations 
+\emph default
+(sequence 
+\emph on
+Mysterious Answers to Mysterious Questions
+\emph default
+).
+\end_layout
+
+\end_inset
+
+ and fake causality
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+Fake Causality
+\emph default
+ (sequence 
+\emph on
+Mysterious Answers to Mysterious Questions
+\emph default
+).
+\end_layout
+
+\end_inset
+
+ and positive bias
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+Positive Bias: Look Into the Dark 
+\emph default
+(sequence 
+\emph on
+Mysterious Answers to Mysterious Questions
+\emph default
+).
+\end_layout
+
+\end_inset
+
+ and motivated cognition,
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Knowing About Biases Can Hurt People 
+\emph default
+(sequence 
+\emph on
+How To Actually Change Your Mind
+\emph default
+).
+\end_layout
+
+\end_inset
+
+ it may seem all too obvious that if a woman is a witch, of course she would
+ make the coin come up 0101010101.
+ But of this I have already spoken.
+\end_layout
+
+\end_body
+\end_document

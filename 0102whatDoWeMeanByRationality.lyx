@@ -1,0 +1,880 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass memoir
+\begin_preamble
+\usepackage{fmtcount}
+\usepackage{graphicx}
+
+\renewcommand{\chaptermark}[1]{ \markboth{\textsc{#1}}{} }
+%\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+\makepagestyle{myheadings}
+%  \makeevenhead{myheadings}{\thepage}{\textsc{\chaptername\ \Numberstringnum{\thechapter}}}{}
+  \makeevenhead{myheadings}{}{\textsc{\chaptername\ \thechapter}}{}
+  \makeoddhead{myheadings}{}{\leftmark}{}
+%  \makeheadrule{myheadings}{\textwidth}{0.4pt}
+  \makeevenfoot{myheadings}{\thepage}{}{}
+  \makeoddfoot{myheadings}{}{}{\thepage}
+
+\makechapterstyle{hpmor}{%
+  \chapterstyle{default}
+  \renewcommand*{\chapterheadstart}{}
+  \renewcommand*{\chapnumfont}{\normalfont}
+  \renewcommand*{\printchaptername}{%
+%     \centerline{\chapnumfont \textsc{\chaptername\ \Numberstringnum{\thechapter}}}}
+     \centerline{\chapnumfont \textsc{\chaptername\ \thechapter}}}
+  \renewcommand*{\chapternamenum}{}
+  \renewcommand*{\printchapternum}{}
+  \renewcommand*{\afterchapternum}{%
+    \par\centerline{\parbox{0.5in}{\hrulefill}}\par}
+  \renewcommand*{\printchapternonum}{%
+    \vphantom{\chapnumfont \@chapapp 1}\par
+    \parbox{0.5in}{}\par}
+  \renewcommand*{\chaptitlefont}{\normalfont\LARGE\sffamily}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \centering \chaptitlefont\textsc{##1}}}
+  \renewcommand*{\afterchaptertitle}{\par\vspace\par}
+\chapterstyle{hpmor}
+
+\usepackage{fmtcount}
+\usepackage{changepage} %per cambiare la dimensione del paragrafo
+\usepackage{xcolor} %per il titolo in rosso
+\setlength{\emergencystretch}{3em} %per alcuni problemi di hyphenation
+\usepackage{shapepar} %paragrafi con una certa forma
+\usepackage{url}%url lunga
+\renewcommand*{\parttitlefont}{\normalfont\HUGE\sffamily}
+
+\makeatletter
+\renewcommand\part{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+  \thispagestyle{empty}%
+  \if@twocolumn
+    \onecolumn
+    \@tempswatrue
+  \else
+    \@tempswafalse
+  \fi
+  \null\vfil
+  \secdef\@part\@spart}
+\makeatother
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman Linux Libertine O
+\font_sans Purisa
+\font_typewriter Inconsolata
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf true
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format pdf4
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize custom
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 6in
+\paperheight 9in
+\leftmargin 2.345cm
+\topmargin 3.34cm
+\rightmargin 3.517cm
+\bottommargin 5.08cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle myheadings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+What Do We Mean By 
+\begin_inset Quotes eld
+\end_inset
+
+Rationality
+\begin_inset Quotes erd
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+We mean:
+\end_layout
+
+\begin_layout Enumerate
+
+\noun on
+Epistemic rationality
+\noun default
+: believing, and updating on evidence, so as to systematically improve the
+ correspondence between your map and the territory.
+ The art of obtaining beliefs that correspond to reality as closely as possible.
+ This correspondence is commonly termed 
+\begin_inset Quotes eld
+\end_inset
+
+truth
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+accuracy
+\begin_inset Quotes erd
+\end_inset
+
+, and we're happy to call it that.
+\end_layout
+
+\begin_layout Enumerate
+
+\noun on
+Instrumental rationality
+\noun default
+: achieving your values.
+ Not necessarily 
+\begin_inset Quotes eld
+\end_inset
+
+your values
+\begin_inset Quotes erd
+\end_inset
+
+ in the sense of being 
+\emph on
+selfish
+\emph default
+ values or 
+\emph on
+unshared
+\emph default
+ values: 
+\begin_inset Quotes eld
+\end_inset
+
+your values
+\begin_inset Quotes erd
+\end_inset
+
+ means 
+\emph on
+anything you care about
+\emph default
+.
+ The art of choosing actions that steer the future toward outcomes ranked
+ higher in your preferences.
+ On LW we sometimes refer to this as 
+\begin_inset Quotes eld
+\end_inset
+
+winning
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If that seems like a perfectly good definition, you can stop reading here;
+ otherwise continue.
+\end_layout
+
+\begin_layout Standard
+Sometimes experimental psychologists uncover human reasoning that seems
+ very strange - for example, someone rates the probability 
+\begin_inset Quotes eld
+\end_inset
+
+Bill plays jazz
+\begin_inset Quotes erd
+\end_inset
+
+ as 
+\emph on
+less
+\emph default
+ than the probability 
+\begin_inset Quotes eld
+\end_inset
+
+Bill is an accountant who plays jazz
+\begin_inset Quotes erd
+\end_inset
+
+.
+ This seems like an odd judgment, since any particular jazz-playing accountant
+ is obviously a jazz player.
+ But to what higher vantage point do we appeal in saying that the judgment
+ is 
+\emph on
+wrong
+\emph default
+?
+\end_layout
+
+\begin_layout Standard
+Experimental psychologists use two gold standards: 
+\emph on
+probability theory
+\emph default
+, and 
+\emph on
+decision theory
+\emph default
+.
+ Since it is a universal law of probability theory that 
+\begin_inset Formula $P\left(A\right)\geq P\left(A\,\&\, B\right)$
+\end_inset
+
+, the judgment 
+\emph on
+P
+\emph default
+(
+\begin_inset Quotes eld
+\end_inset
+
+Bill plays jazz
+\begin_inset Quotes erd
+\end_inset
+
+) < 
+\emph on
+P
+\emph default
+(
+\begin_inset Quotes eld
+\end_inset
+
+Bill plays jazz
+\begin_inset Quotes erd
+\end_inset
+
+ & 
+\begin_inset Quotes eld
+\end_inset
+
+Bill is accountant
+\begin_inset Quotes erd
+\end_inset
+
+) is labeled incorrect.
+\end_layout
+
+\begin_layout Standard
+To keep it technical, you would say that this probability judgment is 
+\emph on
+non-Bayesian
+\emph default
+.
+ Beliefs that conform to a coherent probability distribution, and decisions
+ that maximize the probabilistic expectation of a coherent utility function,
+ are called 
+\begin_inset Quotes eld
+\end_inset
+
+Bayesian
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This does not quite exhaust the problem of what is meant in practice by
+ 
+\begin_inset Quotes eld
+\end_inset
+
+rationality
+\begin_inset Quotes erd
+\end_inset
+
+, for two major reasons:
+\end_layout
+
+\begin_layout Standard
+First, the Bayesian formalisms in their full form are computationally intractabl
+e on most real-world problems.
+ No one can 
+\emph on
+actually
+\emph default
+ calculate and obey the math, any more than you can predict the stock market
+ by calculating the movements of quarks.
+\end_layout
+
+\begin_layout Standard
+This is why we have a whole site called 
+\begin_inset Quotes eld
+\end_inset
+
+Less Wrong
+\begin_inset Quotes erd
+\end_inset
+
+, rather than simply stating the formal axioms and being done.
+ There's a whole further art to finding the truth and accomplishing value
+ 
+\emph on
+from inside a human mind
+\emph default
+: we have to learn our own flaws, overcome our biases, prevent ourselves
+ from self-deceiving, get ourselves into good emotional shape to confront
+ the truth and do what needs doing, etcetera etcetera and so on.
+\end_layout
+
+\begin_layout Standard
+Second, sometimes the meaning of the math itself is called into question.
+ The exact rules of probability theory are called into question by e.g.
+ anthropic problems in which the number of observers is uncertain.
+ The exact rules of decision theory are called into question by e.g.
+ Newcomblike problems in which other agents may predict your decision before
+ it happens.
+\end_layout
+
+\begin_layout Standard
+In cases like these, it is futile to try to settle the problem by coming
+ up with some new definition of the word 
+\begin_inset Quotes eld
+\end_inset
+
+rational
+\begin_inset Quotes erd
+\end_inset
+
+, and saying, 
+\begin_inset Quotes eld
+\end_inset
+
+Therefore my preferred answer, 
+\emph on
+by definition
+\emph default
+, is what is meant by the word `rational'.
+\begin_inset Quotes erd
+\end_inset
+
+ This simply begs the question of why anyone should pay attention to your
+ definition.
+ We aren't interested in probability theory because it is the holy word
+ handed down from Laplace.
+ We're interested in Bayesian-style belief-updating (with Occam priors)
+ because we expect that this style of thinking gets us systematically closer
+ to, you know, 
+\emph on
+accuracy
+\emph default
+, the map that reflects the territory.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+More on the futility of arguing 
+\begin_inset Quotes eld
+\end_inset
+
+by definition
+\begin_inset Quotes erd
+\end_inset
+
+ in the 
+\emph on
+The Parable of Hemlock 
+\emph default
+and 
+\emph on
+Arguing 
+\begin_inset Quotes eld
+\end_inset
+
+By Definition
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\emph default
+(sequence 
+\emph on
+A Human's Guide to Words
+\emph default
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And then there are questions of 
+\begin_inset Quotes eld
+\end_inset
+
+How to think
+\begin_inset Quotes erd
+\end_inset
+
+ that seem not quite answered by either probability theory or decision theory
+ -- like the question of how to feel about the truth once we have it.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+Feeling Rational
+\emph default
+ (sequence 
+\emph on
+How To Actually Change Your Mind
+\emph default
+).
+\end_layout
+
+\end_inset
+
+ Here again, trying to define 
+\begin_inset Quotes eld
+\end_inset
+
+rationality
+\begin_inset Quotes erd
+\end_inset
+
+ a particular way doesn't support an answer, merely presume it.
+\end_layout
+
+\begin_layout Standard
+From the 
+\emph on
+Twelve Virtues of Rationality
+\emph default
+:
+\end_layout
+
+\begin_layout Quotation
+
+\size footnotesize
+How can you improve your conception of rationality? Not by saying to yourself,
+ “It is my duty to be rational.” By this you only enshrine your mistaken
+ conception.
+ Perhaps your conception of rationality is that it is rational to believe
+ the words of the Great Teacher, and the Great Teacher says, “The sky is
+ green,” and you look up at the sky and see blue.
+ If you think: “It may look like the sky is blue, but rationality is to
+ believe the words of the Great Teacher,” you lose a chance to discover
+ your mistake.
+\end_layout
+
+\begin_layout Quotation
+
+\size footnotesize
+Do not ask whether it is “the Way” to do this or that.
+ Ask whether the sky is blue or green.
+ If you speak overmuch of the Way you will not attain it.
+\end_layout
+
+\begin_layout Quotation
+
+\size footnotesize
+You may try to name the highest principle with names such as “the map that
+ reflects the territory” or “experience of success and failure” or “Bayesian
+ decision theory”.
+ But perhaps you describe incorrectly the nameless virtue.
+ How will you discover your mistake? Not by comparing your description to
+ itself, but by comparing it to that which you did not name.
+\end_layout
+
+\begin_layout Standard
+We are not here to argue the meaning of a word,
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+Disputing Definitions
+\emph default
+ (sequence 
+\emph on
+A Human's Guide to Words
+\emph default
+).
+\end_layout
+
+\end_inset
+
+ not even if that word is 
+\begin_inset Quotes eld
+\end_inset
+
+rationality
+\begin_inset Quotes erd
+\end_inset
+
+.
+ The point of attaching sequences of letters to particular concepts is to
+ let two people 
+\emph on
+communicate
+\emph default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+The Argument from Common Usage
+\emph default
+ (sequence 
+\emph on
+A Human's Guide to Words
+\emph default
+).
+\end_layout
+
+\end_inset
+
+ -- to help transport thoughts from one mind to another.
+ You cannot change reality, or prove the thought, by manipulating which
+ meanings go with which words.
+\end_layout
+
+\begin_layout Standard
+So if you understand what concept we are 
+\emph on
+generally getting
+\emph default
+ at with this word 
+\begin_inset Quotes eld
+\end_inset
+
+rationality
+\begin_inset Quotes erd
+\end_inset
+
+, and with the sub-terms 
+\begin_inset Quotes eld
+\end_inset
+
+epistemic rationality
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+instrumental rationality
+\begin_inset Quotes erd
+\end_inset
+
+, we 
+\emph on
+have communicated
+\emph default
+: we have accomplished everything there is to accomplish by talking about
+ how to define 
+\begin_inset Quotes eld
+\end_inset
+
+rationality
+\begin_inset Quotes erd
+\end_inset
+
+.
+ What's left to discuss is not 
+\emph on
+what meaning
+\emph default
+ to attach to the syllables 
+\begin_inset Quotes eld
+\end_inset
+
+ra-tio-na-li-ty
+\begin_inset Quotes erd
+\end_inset
+
+; what's left to discuss is 
+\emph on
+what is a good way to think
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+With that said, you should be aware that many of us will regard as 
+\emph on
+controversial
+\emph default
+ -- at the very least -- any construal of 
+\begin_inset Quotes eld
+\end_inset
+
+rationality
+\begin_inset Quotes erd
+\end_inset
+
+ that makes it 
+\emph on
+non-normative
+\emph default
+:
+\end_layout
+
+\begin_layout Standard
+For example, if you say, 
+\begin_inset Quotes eld
+\end_inset
+
+The rational belief is X, but the true belief is Y
+\begin_inset Quotes erd
+\end_inset
+
+ then you are probably using the word 
+\begin_inset Quotes eld
+\end_inset
+
+rational
+\begin_inset Quotes erd
+\end_inset
+
+ in a way that means something other than what most of us have in mind.
+ (E.g.
+ some of us expect 
+\begin_inset Quotes eld
+\end_inset
+
+rationality
+\begin_inset Quotes erd
+\end_inset
+
+ to be 
+\emph on
+consistent under reflection
+\emph default
+ -- 
+\begin_inset Quotes eld
+\end_inset
+
+rationally
+\begin_inset Quotes erd
+\end_inset
+
+ looking at the evidence, and 
+\begin_inset Quotes eld
+\end_inset
+
+rationally
+\begin_inset Quotes erd
+\end_inset
+
+ considering how your mind processes the evidence, shouldn't lead to two
+ different conclusions.) Similarly, if you find yourself saying 
+\begin_inset Quotes eld
+\end_inset
+
+The rational thing to do is X, but the right thing to do is Y
+\begin_inset Quotes erd
+\end_inset
+
+ then you are almost certainly using one of the words 
+\begin_inset Quotes eld
+\end_inset
+
+rational
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+right
+\begin_inset Quotes erd
+\end_inset
+
+ in a way that a huge chunk of readers won't agree with.
+\end_layout
+
+\begin_layout Standard
+In this case -- or in any other case where controversy threatens -- you
+ should substitute more specific language:
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+Taboo Your Words
+\emph default
+ (sequence 
+\emph on
+A Human's Guide to Words
+\emph default
+).
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+The self-benefiting thing to do is to run away, but I hope I would at least
+ try to drag the girl off the railroad tracks
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+Causal decision theory as usually formulated says you should two-box on
+ Newcomb's Problem, but I'd rather have a million dollars.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+X is rational!
+\begin_inset Quotes erd
+\end_inset
+
+ is usually just a more strident way of saying 
+\begin_inset Quotes eld
+\end_inset
+
+I think X is true
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+I think X is good
+\begin_inset Quotes erd
+\end_inset
+
+.
+ So why have an additional word for 
+\begin_inset Quotes eld
+\end_inset
+
+rational
+\begin_inset Quotes erd
+\end_inset
+
+ as well as 
+\begin_inset Quotes eld
+\end_inset
+
+true
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+good
+\begin_inset Quotes erd
+\end_inset
+
+? Because we want to talk about 
+\emph on
+systematic methods
+\emph default
+ for obtaining truth and winning.
+\end_layout
+
+\begin_layout Standard
+The word 
+\begin_inset Quotes eld
+\end_inset
+
+rational
+\begin_inset Quotes erd
+\end_inset
+
+ has potential pitfalls, but there are plenty of non-borderline cases where
+ 
+\begin_inset Quotes eld
+\end_inset
+
+rational
+\begin_inset Quotes erd
+\end_inset
+
+ works fine to 
+\emph on
+communicate
+\emph default
+ what one is getting at, likewise "irrational".
+ In these cases we're not afraid to use it.
+\end_layout
+
+\begin_layout Standard
+Yet one should also be careful not to 
+\emph on
+overuse
+\emph default
+ that word.
+ One receives no points merely for pronouncing it loudly.
+ If you speak overmuch of the Way you will not attain it.
+ 
+\end_layout
+
+\end_body
+\end_document
