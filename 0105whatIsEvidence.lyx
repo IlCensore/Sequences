@@ -149,7 +149,11 @@ true
 \begin_inset Quotes erd
 \end_inset
 
- — Alfred Tarski
+ —
+\begin_inset space ~
+\end_inset
+
+Alfred Tarski
 \end_layout
 
 \begin_layout Epigraph
@@ -164,7 +168,11 @@ true
 \begin_inset Quotes erd
 \end_inset
 
- — Aristotle, 
+ —
+\begin_inset space ~
+\end_inset
+
+Aristotle, 
 \emph on
 Metaphysics
 \emph default

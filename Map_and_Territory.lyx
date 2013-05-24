@@ -38,7 +38,7 @@
   \renewcommand*{\afterchaptertitle}{\par\vspace\par}
 \chapterstyle{hpmor}
 
-\usepackage{fmtcount}
+\usepackage{lettrine}
 \usepackage{changepage} %per cambiare la dimensione del paragrafo
 \usepackage{xcolor} %per il titolo in rosso
 \setlength{\emergencystretch}{3em} %per alcuni problemi di hyphenation
@@ -565,7 +565,27 @@ Map and Territory
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
+filename "0101-the-simple-truth.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
 filename "0102whatDoWeMeanByRationality.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "0104whyTruthAnd.lyx"
 
 \end_inset
 

@@ -139,7 +139,21 @@ Rationality
 \end_layout
 
 \begin_layout Standard
-We mean:
+
+\lang italian
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lettrine[lines=1]{W}{e mean:}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate
