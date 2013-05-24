@@ -1,0 +1,1751 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass memoir
+\begin_preamble
+\usepackage{fmtcount}
+\usepackage{graphicx}
+
+\renewcommand{\chaptermark}[1]{ \markboth{\textsc{#1}}{} }
+%\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+\makepagestyle{myheadings}
+%  \makeevenhead{myheadings}{\thepage}{\textsc{\chaptername\ \Numberstringnum{\thechapter}}}{}
+  \makeevenhead{myheadings}{}{\textsc{\chaptername\ \thechapter}}{}
+  \makeoddhead{myheadings}{}{\leftmark}{}
+%  \makeheadrule{myheadings}{\textwidth}{0.4pt}
+  \makeevenfoot{myheadings}{\thepage}{}{}
+  \makeoddfoot{myheadings}{}{}{\thepage}
+
+\makechapterstyle{hpmor}{%
+  \chapterstyle{default}
+  \renewcommand*{\chapterheadstart}{}
+  \renewcommand*{\chapnumfont}{\normalfont}
+  \renewcommand*{\printchaptername}{%
+%     \centerline{\chapnumfont \textsc{\chaptername\ \Numberstringnum{\thechapter}}}}
+     \centerline{\chapnumfont \textsc{\chaptername\ \thechapter}}}
+  \renewcommand*{\chapternamenum}{}
+  \renewcommand*{\printchapternum}{}
+  \renewcommand*{\afterchapternum}{%
+    \par\centerline{\parbox{0.5in}{\hrulefill}}\par}
+  \renewcommand*{\printchapternonum}{%
+    \vphantom{\chapnumfont \@chapapp 1}\par
+    \parbox{0.5in}{}\par}
+  \renewcommand*{\chaptitlefont}{\normalfont\LARGE\sffamily}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \centering \chaptitlefont\textsc{##1}}}
+  \renewcommand*{\afterchaptertitle}{\par\vspace\par}
+\chapterstyle{hpmor}
+
+\usepackage{fmtcount}
+\usepackage{changepage} %per cambiare la dimensione del paragrafo
+\usepackage{xcolor} %per il titolo in rosso
+\setlength{\emergencystretch}{3em} %per alcuni problemi di hyphenation
+\usepackage{shapepar} %paragrafi con una certa forma
+\usepackage{url}%url lunga
+\renewcommand*{\parttitlefont}{\normalfont\HUGE\sffamily}
+
+\makeatletter
+\renewcommand\part{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi
+  \thispagestyle{empty}%
+  \if@twocolumn
+    \onecolumn
+    \@tempswatrue
+  \else
+    \@tempswafalse
+  \fi
+  \null\vfil
+  \secdef\@part\@spart}
+\makeatother
+\end_preamble
+\use_default_options true
+\master Map_and_Territory.lyx
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman Linux Libertine O
+\font_sans Purisa
+\font_typewriter Inconsolata
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf true
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format pdf4
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize custom
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 6in
+\paperheight 9in
+\leftmargin 2.345cm
+\topmargin 3.34cm
+\rightmargin 3.517cm
+\bottommargin 5.08cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle myheadings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+An Intuitive Explanation of Bayes' Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:An-Intuitive-Explanation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\emph on
+Bayes' Theorem
+\begin_inset Newline newline
+\end_inset
+
+for the curious and bewildered;
+\begin_inset Newline newline
+\end_inset
+
+an excruciatingly gentle introduction.
+\end_layout
+
+\begin_layout Standard
+Your friends and colleagues are talking about something called 
+\begin_inset Quotes eld
+\end_inset
+
+Bayes' Theorem
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+Bayes' Rule
+\begin_inset Quotes erd
+\end_inset
+
+, or something called Bayesian reasoning.
+ They sound really enthusiastic about it, too, so you google and find a
+ web-page about Bayes' Theorem and\SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout Standard
+It's this equation.
+ That's all.
+ Just one equation.
+ The page you found gives a definition of it, but it doesn't say what it
+ is, or why it's useful, or why your friends would be interested in it.
+ It looks like this random statistics thing.
+\end_layout
+
+\begin_layout Standard
+So you came here.
+ Maybe you don't understand what the equation says.
+ Maybe you understand it in theory, but every time you try to apply it in
+ practice you get mixed up trying to remember the difference between 
+\begin_inset Formula $p\left(a\mid x\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $p\left(x\mid a\right)$
+\end_inset
+
+, and whether 
+\begin_inset Formula $p\left(a\right)\cdot p\left(x\mid a\right)$
+\end_inset
+
+ belongs in the numerator or the denominator.
+ Maybe you see the theorem, and you understand the theorem, and you can
+ use the theorem, but you can't understand why your friends and/or research
+ colleagues seem to think it's the secret of the universe.
+ Maybe your friends are all wearing Bayes' Theorem T-shirts, and you're
+ feeling left out.
+ Maybe you're a girl looking for a boyfriend, but the boy you're interested
+ in refuses to date anyone who 
+\begin_inset Quotes eld
+\end_inset
+
+isn't Bayesian
+\begin_inset Quotes erd
+\end_inset
+
+.
+ What matters is that Bayes is cool, and if you don't know Bayes, you aren't
+ cool.
+\end_layout
+
+\begin_layout Standard
+Why does a mathematical concept generate this strange enthusiasm in its
+ students? What is the so-called Bayesian Revolution now sweeping through
+ the sciences, which claims to subsume even the experimental method itself
+ as a special case? What is the secret that the adherents of Bayes know?
+ What is the light that they have seen?
+\end_layout
+
+\begin_layout Standard
+Soon you will know.
+ Soon you will be one of us.
+\end_layout
+
+\begin_layout Standard
+While there are a few existing online explanations of Bayes' Theorem, my
+ experience with trying to introduce people to Bayesian reasoning is that
+ the existing on-line explanations are too abstract.
+ Bayesian reasoning is very 
+\emph on
+counterintuitive
+\emph default
+.
+ People do not employ Bayesian reasoning intuitively, find it very difficult
+ to learn Bayesian reasoning when tutored, and rapidly forget Bayesian methods
+ once the tutoring is over.
+ This holds equally true for novice students and highly trained professionals
+ in a field.
+ Bayesian reasoning is apparently one of those things which, like quantum
+ mechanics or the Wason Selection Test, is inherently difficult for humans
+ to grasp with our built-in mental faculties.
+\end_layout
+
+\begin_layout Standard
+Or so they claim.
+ Here you will find an attempt to offer an 
+\emph on
+intuitive
+\emph default
+ explanation of Bayesian reasoning -- an excruciatingly gentle introduction
+ that invokes all the human ways of grasping numbers, from natural frequencies
+ to spatial visualization.
+ The intent is to convey, not abstract rules for manipulating numbers, but
+ what the numbers mean, and why the rules are what they are (and cannot
+ possibly be anything else).
+ When you are finished reading this page, you will see Bayesian problems
+ in your dreams.
+\end_layout
+
+\begin_layout Standard
+And let's begin.
+\end_layout
+
+\begin_layout Quote
+\align center
+
+\lang italian
+\begin_inset Graphics
+	filename ../HPeiMdR/fleur.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here's a story problem about a situation that doctors often encounter:
+\end_layout
+
+\begin_layout Quotation
+1% of women at age forty who participate in routine screening have breast
+ cancer.
+ 80% of women with breast cancer will get positive mammographies.
+ 9.6% of women without breast cancer will also get positive mammographies.
+ A woman in this age group had a positive mammography in a routine screening.
+ What is the probability that she actually has breast cancer?
+\end_layout
+
+\begin_layout Standard
+What do you think the answer is? If you haven't encountered this kind of
+ problem before, please take a moment to come up with your own answer before
+ continuing.
+\end_layout
+
+\begin_layout Standard
+Next, suppose I told you that most doctors get the same wrong answer on
+ this problem -- usually, only around 15% of doctors get it right.
+ (
+\begin_inset Quotes eld
+\end_inset
+
+Really? 15%? Is that a real number, or an urban legend based on an Internet
+ poll?
+\begin_inset Quotes erd
+\end_inset
+
+ It's a real number.
+ See Casscells, Schoenberger, and Grayboys 1978; Eddy 1982; Gigerenzer and
+ Hoffrage 1995; and many other studies.
+ It's a surprising result which is easy to replicate, so it's been extensively
+ replicated.)
+\end_layout
+
+\begin_layout Standard
+Do you want to think about your answer again?
+\end_layout
+
+\begin_layout Standard
+On the story problem above, most doctors estimate the probability to be
+ between 70% and 80%, which is wildly incorrect.
+\end_layout
+
+\begin_layout Standard
+Here's an alternate version of the problem on which doctors fare somewhat
+ better:
+\end_layout
+
+\begin_layout Quotation
+10 out of 1000 women at age forty who participate in routine screening have
+ breast cancer.
+ 800 out of 1000 women with breast cancer will get positive mammographies.
+ 96 out of 1000 women without breast cancer will also get positive mammographies.
+ If 1000 women in this age group undergo a routine screening, about what
+ fraction of women with positive mammographies will actually have breast
+ cancer?
+\end_layout
+
+\begin_layout Standard
+And finally, here's the problem on which doctors fare best of all, with
+ 46% -- nearly half -- arriving at the correct answer:
+\end_layout
+
+\begin_layout Quotation
+100 out of 10,000 women at age forty who participate in routine screening
+ have breast cancer.
+ 80 of every 100 women with breast cancer will get a positive mammography.
+ 950 out of 9,900 women without breast cancer will also get a positive mammograp
+hy.
+ If 10,000 women in this age group undergo a routine screening, about what
+ fraction of women with positive mammographies will actually have breast
+ cancer?
+\end_layout
+
+\begin_layout Standard
+The correct answer is 7.8%, obtained as follows: Out of 10,000 women, 100
+ have breast cancer; 80 of those 100 have positive mammographies.
+ From the same 10,000 women, 9,900 will not have breast cancer and of those
+ 9,900 women, 950 will also get positive mammographies.
+ This makes the total number of women with positive mammographies 950+80
+ or 1,030.
+ Of those 1,030 women with positive mammographies, 80 will have cancer.
+ Expressed as a proportion, this is 80/1,030 or 0.07767 or 7.8%.
+\end_layout
+
+\begin_layout Standard
+To put it another way, before the mammography screening, the 10,000 women
+ can be divided into two groups:
+\end_layout
+
+\begin_layout Itemize
+Group 1: 100 women 
+\emph on
+with
+\emph default
+ breast cancer.
+\end_layout
+
+\begin_layout Itemize
+Group 2: 9,900 women 
+\emph on
+without
+\emph default
+ breast cancer.
+\end_layout
+
+\begin_layout Standard
+Summing these two groups gives a total of 10,000 patients, confirming that
+ none have been lost in the math.
+ After the mammography, the women can be divided into four groups:
+\end_layout
+
+\begin_layout Itemize
+Group A: 80 women 
+\emph on
+with
+\emph default
+ breast cancer, and a 
+\emph on
+positive
+\emph default
+ mammography.
+\end_layout
+
+\begin_layout Itemize
+Group B: 20 women 
+\emph on
+with
+\emph default
+ breast cancer, and a 
+\emph on
+negative
+\emph default
+ mammography.
+\end_layout
+
+\begin_layout Itemize
+Group C: 950 women 
+\emph on
+without
+\emph default
+ breast cancer, and a 
+\emph on
+positive
+\emph default
+ mammography.
+\end_layout
+
+\begin_layout Itemize
+Group D: 8,950 women 
+\emph on
+without
+\emph default
+ breast cancer, and a 
+\emph on
+negative
+\emph default
+ mammography.
+\end_layout
+
+\begin_layout Standard
+As you can check, the sum of all four groups is still 10,000.
+ The sum of groups A and B, the groups with breast cancer, corresponds to
+ group 1; and the sum of groups C and D, the groups without breast cancer,
+ corresponds to group 2; so administering a mammography does not actually
+ 
+\emph on
+change
+\emph default
+ the number of women with breast cancer.
+ The proportion of the cancer patients (A + B) within the complete set of
+ patients (A + B + C + D) is the same as the 1% prior chance that a woman
+ has cancer: 
+\begin_inset Formula $(80+20)/(80+20+950+8950)=100/10000=1\%$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The proportion of cancer patients with positive results, within the group
+ of 
+\emph on
+all
+\emph default
+ patients with positive results, is the proportion of (A) within (A + C):
+ 
+\begin_inset Formula $80/(80+950)=80/1030=7.8\%$
+\end_inset
+
+.
+ If you administer a mammography to 10,000 patients, then out of the 1030
+ with positive mammographies, 80 of those positive-mammography patients
+ will have cancer.
+ This is the correct answer, the answer a doctor should give a positive-mammogra
+phy patient if she asks about the chance she has breast cancer; if thirteen
+ patients ask this question, roughly 1 out of those 13 will have cancer.
+\end_layout
+
+\begin_layout Standard
+The most common mistake is to ignore the original fraction of women with
+ breast cancer, and the fraction of women without breast cancer who receive
+ false positives, and focus only on the fraction of women with breast cancer
+ who get positive results.
+ For example, the vast majority of doctors in these studies seem to have
+ thought that if around 80% of women with breast cancer have positive mammograph
+ies, then the probability of a women with a positive mammography having
+ breast cancer must be around 80%.
+\end_layout
+
+\begin_layout Standard
+Figuring out the final answer always requires 
+\emph on
+all three
+\emph default
+ pieces of information -- the percentage of women with breast cancer, the
+ percentage of women without breast cancer who receive false positives,
+ and the percentage of women with breast cancer who receive (correct) positives.
+\end_layout
+
+\begin_layout Standard
+To see that the final answer always depends on the original fraction of
+ women with breast cancer, consider an alternate universe in which only
+ one woman out of a million has breast cancer.
+ Even if mammography in this world detects breast cancer in 8 out of 10
+ cases, while returning a false positive on a woman without breast cancer
+ in only 1 out of 10 cases, there will still be a hundred thousand false
+ positives for every real case of cancer detected.
+ The original probability that a woman has cancer is so extremely low that,
+ although a positive result on the mammography does 
+\emph on
+increase
+\emph default
+ the estimated probability, the probability isn't increased to certainty
+ or even 
+\begin_inset Quotes eld
+\end_inset
+
+a noticeable chance
+\begin_inset Quotes erd
+\end_inset
+
+; the probability goes from 1:1,000,000 to 1:100,000.
+\end_layout
+
+\begin_layout Standard
+Similarly, in an alternate universe where only one out of a million women
+ does 
+\emph on
+not
+\emph default
+ have breast cancer, a positive result on the patient's mammography obviously
+ doesn't mean that she has an 80% chance of having breast cancer! If this
+ were the case her estimated probability of having cancer would have been
+ revised drastically 
+\emph on
+downward
+\emph default
+ after she got a 
+\emph on
+positive
+\emph default
+ result on her mammography -- an 80% chance of having cancer is a lot less
+ than 99.9999%! If you administer mammographies to ten million women in this
+ world, around eight million women with breast cancer will get correct positive
+ results, while one woman without breast cancer will get false positive
+ results.
+ Thus, if you got a positive mammography in this alternate universe, your
+ chance of having cancer would go from 99.9999% up to 99.999987%.
+ That is, your chance of being healthy would go from 1:1,000,000 down to
+ 1:8,000,000.
+\end_layout
+
+\begin_layout Standard
+These two extreme examples help demonstrate that the mammography result
+ doesn't 
+\emph on
+replace
+\emph default
+ your old information about the patient's chance of having cancer; the mammograp
+hy 
+\emph on
+slides
+\emph default
+ the estimated probability in the direction of the result.
+ A positive result slides the original probability upward; a negative result
+ slides the probability downward.
+ For example, in the original problem where 1% of the women have cancer,
+ 80% of women with cancer get positive mammographies, and 9.6% of women without
+ cancer get positive mammographies, a positive result on the mammography
+ 
+\emph on
+slides
+\emph default
+ the 1% chance upward to 7.8%.
+\end_layout
+
+\begin_layout Standard
+Most people encountering problems of this type for the first time carry
+ out the mental operation of 
+\emph on
+replacing
+\emph default
+ the original 1% probability with the 80% probability that a woman with
+ cancer gets a positive mammography.
+ It may seem like a good idea, but it just doesn't work.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+The probability that a woman with a positive mammography has breast cancer
+\begin_inset Quotes erd
+\end_inset
+
+ is not at all the same thing as 
+\begin_inset Quotes eld
+\end_inset
+
+the probability that a woman with breast cancer has a positive mammography
+\begin_inset Quotes erd
+\end_inset
+
+; they are as unlike as apples and cheese.
+ Finding the final answer, 
+\begin_inset Quotes eld
+\end_inset
+
+the probability that a woman with a positive mammography has breast cancer
+\begin_inset Quotes erd
+\end_inset
+
+, uses all three pieces of problem information -- 
+\begin_inset Quotes eld
+\end_inset
+
+the prior probability that a woman has breast cancer
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+the probability that a woman with breast cancer gets a positive mammography
+\begin_inset Quotes erd
+\end_inset
+
+, and 
+\begin_inset Quotes eld
+\end_inset
+
+the probability that a woman without breast cancer gets a positive mammography
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To see that the final answer always depends on the chance that a woman without
+ breast cancer gets a positive mammography, consider an alternate test,
+ mammography+.
+ Like the original test, mammography+ returns positive for 80% of women
+ with breast cancer.
+ However, mammography+ returns a positive result for only one out of a million
+ women without breast cancer -- mammography+ has the same rate of false
+ negatives, but a vastly lower rate of false positives.
+ Suppose a patient receives a positive mammography+.
+ What is the chance that this patient has breast cancer? Under the new test,
+ it is a virtual certainty -- 99.988%, i.e., a 1 in 8082 chance of being healthy.
+\end_layout
+
+\begin_layout Standard
+Remember, at this point, that neither mammography nor mammography+ actually
+ 
+\emph on
+change
+\emph default
+ the number of women who have breast cancer.
+ It may seem like 
+\begin_inset Quotes eld
+\end_inset
+
+There is a virtual certainty you have breast cancer
+\begin_inset Quotes erd
+\end_inset
+
+ is a terrible thing to say, causing much distress and despair; that the
+ more hopeful verdict of the previous mammography test -- a 7.8% chance of
+ having breast cancer -- was much to be preferred.
+ This comes under the heading of 
+\begin_inset Quotes eld
+\end_inset
+
+Don't shoot the messenger
+\begin_inset Quotes erd
+\end_inset
+
+.
+ The number of women who really do have cancer stays exactly the same between
+ the two cases.
+ Only the accuracy with which we 
+\emph on
+detect
+\emph default
+ cancer changes.
+ Under the previous mammography test, 80 women with cancer (who 
+\emph on
+already
+\emph default
+ had cancer, before the mammography) are first told that they have a 7.8%
+ chance of having cancer, creating X amount of uncertainty and fear, after
+ which more detailed tests will inform them that they definitely do have
+ breast cancer.
+ The old mammography test also involves informing 950 women 
+\emph on
+without
+\emph default
+ breast cancer that they have a 7.8% chance of having cancer, thus creating
+ twelve times as much additional fear and uncertainty.
+ The new test, mammography+, does 
+\emph on
+not
+\emph default
+ give 950 women false positives, and the 80 women with cancer are told the
+ same facts they would have learned eventually, only earlier and without
+ an intervening period of uncertainty.
+ Mammography+ is thus a better test in terms of its total emotional impact
+ on patients, as well as being more accurate.
+ Regardless of its emotional impact, it remains a fact that a patient with
+ positive mammography+ has a 99.988% chance of having breast cancer.
+\end_layout
+
+\begin_layout Standard
+Of course, that mammography+ does 
+\emph on
+not
+\emph default
+ give 950 healthy women false positives means that all 80 of the patients
+ with positive mammography+ will be patients with breast cancer.
+ Thus, if you have a positive mammography+, your chance of having cancer
+ is a virtual certainty.
+ It is 
+\emph on
+because
+\emph default
+ mammography+ does not generate as many false positives (and needless emotional
+ stress), that the (much smaller) group of patients who 
+\emph on
+do
+\emph default
+ get positive results will be composed almost entirely of genuine cancer
+ patients (who have bad news coming to them regardless of when it arrives).
+\end_layout
+
+\begin_layout Standard
+Similarly, let's suppose that we have a 
+\emph on
+less
+\emph default
+ discriminating test, mammography*, that still has a 20% rate of false negatives
+, as in the original case.
+ However, mammography* has an 80% rate of false positives.
+ In other words, a patient 
+\emph on
+without
+\emph default
+ breast cancer has an 80% chance of getting a false positive result on her
+ mammography* test.
+ If we suppose the same 1% prior probability that a patient presenting herself
+ for screening has breast cancer, what is the chance that a patient with
+ positive mammography* has cancer?
+\end_layout
+
+\begin_layout Itemize
+Group 1: 100 patients with breast cancer.
+\end_layout
+
+\begin_layout Itemize
+Group 2: 9,900 patients without breast cancer.
+\end_layout
+
+\begin_layout Standard
+After mammography* screening:
+\end_layout
+
+\begin_layout Itemize
+Group A: 80 patients with breast cancer and a 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ mammography*.
+\end_layout
+
+\begin_layout Itemize
+Group B: 20 patients with breast cancer and a 
+\begin_inset Quotes eld
+\end_inset
+
+negative
+\begin_inset Quotes erd
+\end_inset
+
+ mammography*.
+\end_layout
+
+\begin_layout Itemize
+Group C: 7920 patients without breast cancer and a 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ mammography*.
+\end_layout
+
+\begin_layout Itemize
+Group D: 1980 patients without breast cancer and a 
+\begin_inset Quotes eld
+\end_inset
+
+negative
+\begin_inset Quotes erd
+\end_inset
+
+ mammography*.
+\end_layout
+
+\begin_layout Standard
+The result works out to 80 / 8,000, or 0.01.
+ This is exactly the same as the 1% prior probability that a patient has
+ breast cancer! A 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ result on mammography* doesn't change the probability that a woman has
+ breast cancer at all.
+ You can similarly verify that a 
+\begin_inset Quotes eld
+\end_inset
+
+negative
+\begin_inset Quotes erd
+\end_inset
+
+ mammography* also counts for nothing.
+ And in fact it 
+\emph on
+must
+\emph default
+ be this way, because if mammography* has an 80% hit rate for patients with
+ breast cancer, and also an 80% rate of false positives for patients without
+ breast cancer, then mammography* is completely 
+\emph on
+uncorrelated
+\emph default
+ with breast cancer.
+ There's no reason to call one result 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ and one result 
+\begin_inset Quotes eld
+\end_inset
+
+negative
+\begin_inset Quotes erd
+\end_inset
+
+; in fact, there's no reason to call the test a 
+\begin_inset Quotes eld
+\end_inset
+
+mammography
+\begin_inset Quotes erd
+\end_inset
+
+.
+ You can throw away your expensive mammography* equipment and replace it
+ with a random number generator that outputs a red light 80% of the time
+ and a green light 20% of the time; the results will be the same.
+ Furthermore, there's no reason to call the red light a 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ result or the green light a 
+\begin_inset Quotes eld
+\end_inset
+
+negative
+\begin_inset Quotes erd
+\end_inset
+
+ result.
+ You could have a green light 80% of the time and a red light 20% of the
+ time, or a blue light 80% of the time and a purple light 20% of the time,
+ and it would all have the same bearing on whether the patient has breast
+ cancer: i.e., no bearing whatsoever.
+\end_layout
+
+\begin_layout Standard
+We can show algebraically that this 
+\emph on
+must
+\emph default
+ hold for any case where the chance of a true positive and the chance of
+ a false positive are the same, i.e:
+\end_layout
+
+\begin_layout Itemize
+Group 1: 100 patients with breast cancer.
+\end_layout
+
+\begin_layout Itemize
+Group 2: 9,900 patients without breast cancer.
+\end_layout
+
+\begin_layout Standard
+Now consider a test where the probability of a true positive and the probability
+ of a false positive are the same number M (in the example above, M=80%
+ or M = 0.8):
+\end_layout
+
+\begin_layout Itemize
+Group A: 100*M patients with breast cancer and a 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ result.
+\end_layout
+
+\begin_layout Itemize
+Group B: 100*(1 - M) patients with breast cancer and a 
+\begin_inset Quotes eld
+\end_inset
+
+negative
+\begin_inset Quotes erd
+\end_inset
+
+ result.
+\end_layout
+
+\begin_layout Itemize
+Group C: 9,900*M patients without breast cancer and a 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ result.
+\end_layout
+
+\begin_layout Itemize
+Group D: 9,900*(1 - M) patients without breast cancer and a 
+\begin_inset Quotes eld
+\end_inset
+
+negative
+\begin_inset Quotes erd
+\end_inset
+
+ result.
+\end_layout
+
+\begin_layout Standard
+The proportion of patients with breast cancer, within the group of patients
+ with a 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ result, then equals 
+\begin_inset Formula $100\cdot M/\left(100\cdot M+9900\cdot M\right)=100/\left(100+9900\right)=1\%$
+\end_inset
+
+.
+ This holds true regardless of whether 
+\emph on
+M
+\emph default
+ is 80%, 30%, 50%, or 100%.
+ If we have a mammography* test that returns 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ results for 90% of patients with breast cancer and returns 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ results for 90% of patients without breast cancer, the proportion of 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+-testing patients who have breast cancer will still equal the original proportio
+n of patients with breast cancer, i.e., 1%.
+\end_layout
+
+\begin_layout Standard
+You can run through the same algebra, replacing the prior proportion of
+ patients with breast cancer with an arbitrary percentage P:
+\end_layout
+
+\begin_layout Itemize
+Group 1: Within some number of patients, a fraction P have breast cancer.
+\end_layout
+
+\begin_layout Itemize
+Group 2: Within some number of patients, a fraction (1 - P) do not have
+ breast cancer.
+\end_layout
+
+\begin_layout Standard
+After a 
+\begin_inset Quotes eld
+\end_inset
+
+cancer test
+\begin_inset Quotes erd
+\end_inset
+
+ that returns 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ for a fraction M of patients with breast cancer, and also returns 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ for the same fraction M of patients without cancer:
+\end_layout
+
+\begin_layout Itemize
+Group A: 
+\begin_inset Formula $P\cdot M$
+\end_inset
+
+ patients have breast cancer and a 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ result.
+\end_layout
+
+\begin_layout Itemize
+Group B: 
+\begin_inset Formula $P\cdot\left(1-M\right)$
+\end_inset
+
+ patients have breast cancer and a 
+\begin_inset Quotes eld
+\end_inset
+
+negative
+\begin_inset Quotes erd
+\end_inset
+
+ result.
+\end_layout
+
+\begin_layout Itemize
+Group C: 
+\begin_inset Formula $\left(1-P\right)\cdot M$
+\end_inset
+
+ patients have no breast cancer and a 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ result.
+\end_layout
+
+\begin_layout Itemize
+Group D: 
+\begin_inset Formula $\left(1-P\right)\cdot\left(1-M\right)$
+\end_inset
+
+ patients have no breast cancer and a 
+\begin_inset Quotes eld
+\end_inset
+
+negative
+\begin_inset Quotes erd
+\end_inset
+
+ result.
+\end_layout
+
+\begin_layout Standard
+The chance that a patient with a "positive" result has breast cancer is
+ then the proportion of group A within the combined group A + C, or 
+\begin_inset Formula $P\cdot M/\left[P\cdot M+\left(1-P\right)\cdot M\right]$
+\end_inset
+
+, which, canceling the common factor 
+\emph on
+
+\begin_inset Formula $M$
+\end_inset
+
+
+\emph default
+ from the numerator and denominator, is 
+\begin_inset Formula $P/\left[P+\left(1-P\right)\right]$
+\end_inset
+
+ or 
+\begin_inset Formula $P/1$
+\end_inset
+
+ or just 
+\begin_inset Formula $P$
+\end_inset
+
+.
+ If the rate of false positives is the same as the rate of true positives,
+ you always have the same probability after the test as when you started.
+\end_layout
+
+\begin_layout Standard
+Which is common sense.
+ Take, for example, the 
+\begin_inset Quotes eld
+\end_inset
+
+test
+\begin_inset Quotes erd
+\end_inset
+
+ of flipping a coin; if the coin comes up heads, does it tell you anything
+ about whether a patient has breast cancer? No; the coin has a 50% chance
+ of coming up heads if the patient has breast cancer, and also a 50% chance
+ of coming up heads if the patient does not have breast cancer.
+ Therefore there is no reason to call either heads or tails a 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ result.
+ It's not the probability being 
+\begin_inset Quotes eld
+\end_inset
+
+50/50
+\begin_inset Quotes erd
+\end_inset
+
+ that makes the coin a bad test; it's that the two probabilities, for 
+\begin_inset Quotes eld
+\end_inset
+
+cancer patient turns up heads
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+healthy patient turns up heads
+\begin_inset Quotes erd
+\end_inset
+
+, are the same.
+ If the coin was slightly biased, so that it had a 60% chance of coming
+ up heads, it still wouldn't be a cancer test - what makes a coin a poor
+ test is not that it has a 50/50 chance of coming up heads if the patient
+ has cancer, but that it also has a 50/50 chance of coming up heads if the
+ patient does not have cancer.
+ You can even use a test that comes up 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ for cancer patients 100% of the time, and still not learn anything.
+ An example of such a test is 
+\begin_inset Quotes eld
+\end_inset
+
+Add 2 + 2 and see if the answer is 4.
+\begin_inset Quotes erd
+\end_inset
+
+ This test returns positive 100% of the time for patients with breast cancer.
+ It also returns positive 100% of the time for patients without breast cancer.
+ So you learn nothing.
+\end_layout
+
+\begin_layout Standard
+The original proportion of patients with breast cancer is known as the 
+\emph on
+prior probability
+\emph default
+.
+ The chance that a patient with breast cancer gets a positive mammography,
+ and the chance that a patient without breast cancer gets a positive mammography
+, are known as the two 
+\emph on
+conditional probabilities
+\emph default
+.
+ Collectively, this initial information is known as 
+\emph on
+the priors
+\emph default
+.
+ The final answer -- the estimated probability that a patient has breast
+ cancer, given that we know she has a positive result on her mammography
+ -- is known as the 
+\emph on
+revised probability
+\emph default
+ or the 
+\emph on
+posterior probability
+\emph default
+.
+ What we've just shown is that 
+\emph on
+if the two conditional probabilities are equal, the posterior probability
+ equals the prior probability
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Suppose that a barrel contains many small plastic eggs.
+ Some eggs are painted red and some are painted blue.
+ 40% of the eggs in the bin contain pearls, and 60% contain nothing.
+ 30% of eggs containing pearls are painted blue, and 10% of eggs containing
+ nothing are painted blue.
+ What is the probability that a blue egg contains a pearl? For this example
+ the arithmetic is simple enough that you may be able to do it in your head,
+ and I would suggest trying to do so.
+\end_layout
+
+\begin_layout Standard
+A more compact way of specifying the problem:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p(pearl)=40\%$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p(blue|pearl)=30\%$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p(blue|\text{¬}pearl)=10\%$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p(pearl|blue)=?$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\text{¬}$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ is shorthand for 
+\begin_inset Quotes eld
+\end_inset
+
+not
+\begin_inset Quotes erd
+\end_inset
+
+, so 
+\begin_inset Formula $\text{¬}pearl$
+\end_inset
+
+ reads 
+\begin_inset Quotes eld
+\end_inset
+
+not pearl
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $blue|pearl$
+\end_inset
+
+ is shorthand for 
+\begin_inset Quotes eld
+\end_inset
+
+blue given pearl
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+the probability that an egg is painted blue, given that the egg contains
+ a pearl
+\begin_inset Quotes erd
+\end_inset
+
+.
+ One thing that's confusing about this notation is that the order of implication
+ is read right-to-left, as in Hebrew or Arabic.
+ 
+\begin_inset Formula $blue|pearl$
+\end_inset
+
+ means 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $blue\leftarrow pearl$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+, the degree to which pearl-ness implies blue-ness, not the degree to which
+ blue-ness implies pearl-ness.
+ This is confusing, but it's unfortunately the standard notation in probability
+ theory.
+\end_layout
+
+\begin_layout Standard
+Readers familiar with quantum mechanics will have already encountered this
+ peculiarity; in quantum mechanics, for example, 
+\begin_inset Formula $<d|c><c|b><b|a>$
+\end_inset
+
+ reads as 
+\begin_inset Quotes eld
+\end_inset
+
+the probability that a particle at A goes to B, then to C, ending up at
+ D
+\begin_inset Quotes erd
+\end_inset
+
+.
+ To follow the particle, you move your eyes from right to left.
+ Reading from left to right, 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $|$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ means 
+\begin_inset Quotes eld
+\end_inset
+
+given
+\begin_inset Quotes erd
+\end_inset
+
+; reading from right to left, 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $|$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ means 
+\begin_inset Quotes eld
+\end_inset
+
+implies
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+leads to
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Thus, moving your eyes from left to right, 
+\begin_inset Formula $blue|pearl$
+\end_inset
+
+ reads 
+\begin_inset Quotes eld
+\end_inset
+
+blue given pearl
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+the probability that an egg is painted blue, given that the egg contains
+ a pearl
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Moving your eyes from right to left, 
+\begin_inset Formula $blue|pearl$
+\end_inset
+
+ reads 
+\begin_inset Quotes eld
+\end_inset
+
+pearl implies blue
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+the probability that an egg containing a pearl is painted blue
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The item on the right side is what you 
+\emph on
+already know
+\emph default
+ or the 
+\emph on
+premise
+\emph default
+, and the item on the left side is the 
+\emph on
+implication
+\emph default
+ or 
+\emph on
+conclusion
+\emph default
+.
+ If we have 
+\begin_inset Formula $p(blue|pearl)=30\%$
+\end_inset
+
+, and we 
+\emph on
+already know
+\emph default
+ that some egg contains a pearl, then we can 
+\emph on
+conclude
+\emph default
+ there is a 30% chance that the egg is painted blue.
+ Thus, the final fact we're looking for -- 
+\begin_inset Quotes eld
+\end_inset
+
+the chance that a blue egg contains a pearl
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+the probability that an egg contains a pearl, if we know the egg is painted
+ blue
+\begin_inset Quotes erd
+\end_inset
+
+ -- reads 
+\begin_inset Formula $p(pearl|blue)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let's return to the problem.
+ We have that 40% of the eggs contain pearls, and 60% of the eggs contain
+ nothing.
+ 30% of the eggs containing pearls are painted blue, so 12% of the eggs
+ altogether contain pearls and are painted blue.
+ 10% of the eggs containing nothing are painted blue, so altogether 6% of
+ the eggs contain nothing and are painted blue.
+ A total of 18% of the eggs are painted blue, and a total of 12% of the
+ eggs are painted blue and contain pearls, so the chance a blue egg contains
+ a pearl is 12/18 or 2/3 or around 67%.
+\end_layout
+
+\begin_layout Standard
+It's the 
+\emph on
+differential
+\emph default
+ 
+\emph on
+pressure
+\emph default
+ between the two conditional probabilities, 
+\begin_inset Formula $p(blue|pearl)$
+\end_inset
+
+ and 
+\begin_inset Formula $p(blue|\text{¬}pearl)$
+\end_inset
+
+, that slides the prior probability 
+\begin_inset Formula $p(pearl)$
+\end_inset
+
+ to the posterior probability 
+\begin_inset Formula $p(pearl|blue)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+As before, we can see the necessity of all three pieces of information by
+ considering extreme cases.
+ In a (large) barrel in which only one egg out of a thousand contains a
+ pearl, knowing that an egg is painted blue slides the probability from
+ 0.1% to 0.3% (instead of sliding the probability from 40% to 67%).
+ Similarly, if 999 out of 1000 eggs contain pearls, knowing that an egg
+ is blue slides the probability from 99.9% to 99.966%; the probability that
+ the egg does 
+\emph on
+not
+\emph default
+ contain a pearl goes from 1/1000 to around 1/3000.
+ Even when the prior probability changes, the differential pressure of the
+ two conditional probabilities always slides the probability in the same
+ 
+\emph on
+direction
+\emph default
+.
+ If you learn the egg is painted blue, the probability the egg contains
+ a pearl always goes 
+\emph on
+up
+\emph default
+ -- but it goes up 
+\emph on
+from
+\emph default
+ the prior probability, so you need to know the prior probability in order
+ to calculate the final answer.
+ 0.1% goes up to 0.3%, 10% goes up to 25%, 40% goes up to 67%, 80% goes up
+ to 92%, and 99.9% goes up to 99.966%.
+ If you're interested in knowing how any other probabilities slide, you
+ can type your own prior probability into the Java applet.
+ You can also click and drag the dividing line between 
+\begin_inset Formula $pearl$
+\end_inset
+
+ and 
+\begin_inset Formula $¬pearl$
+\end_inset
+
+ in the upper bar, and watch the posterior probability change in the bottom
+ bar.
+\end_layout
+
+\begin_layout Standard
+Studies of clinical reasoning show that most doctors carry out the mental
+ operation of 
+\emph on
+replacing
+\emph default
+ the original 1% probability with the 80% probability that a woman with
+ cancer would get a positive mammography.
+ Similarly, on the pearl-egg problem, most respondents unfamiliar with Bayesian
+ reasoning would probably respond that the probability a blue egg contains
+ a pearl is 30%, or perhaps 20% (the 30% chance of a true positive minus
+ the 10% chance of a false positive).
+ Even if this mental operation seems like a good idea at the time, it makes
+ no sense in terms of the question asked.
+ It's like the experiment in which you ask a second-grader: 
+\begin_inset Quotes eld
+\end_inset
+
+If eighteen people get on a bus, and then seven more people get on the bus,
+ how old is the bus driver?
+\begin_inset Quotes erd
+\end_inset
+
+ Many second-graders will respond: 
+\begin_inset Quotes eld
+\end_inset
+
+Twenty-five.
+\begin_inset Quotes erd
+\end_inset
+
+ They understand when they're being prompted to carry out a particular mental
+ procedure, but they haven't quite connected the procedure to reality.
+ Similarly, to find the probability that a woman with a positive mammography
+ has breast cancer, it makes no sense whatsoever to 
+\emph on
+replace
+\emph default
+ the original probability that the woman has cancer with the probability
+ that a woman with breast cancer gets a positive mammography.
+ Neither can you subtract the probability of a false positive from the probabili
+ty of the true positive.
+ These operations are as wildly irrelevant as adding the number of people
+ on the bus to find the age of the bus driver.
+\end_layout
+
+\begin_layout Standard
+I keep emphasizing the idea that evidence 
+\emph on
+slides
+\emph default
+ probability because of research that shows people tend to use spatial intuition
+s to grasp numbers.
+ In particular, there's interesting evidence that we have an innate sense
+ of quantity that's localized to left inferior parietal cortex - patients
+ with damage to this area can selectively lose their sense of whether 5
+ is less than 8, while retaining their ability to read, write, and so on.
+ (Yes, really!) The parietal cortex processes our sense of where things
+ are in space (roughly speaking), so an innate 
+\begin_inset Quotes eld
+\end_inset
+
+number line
+\begin_inset Quotes erd
+\end_inset
+
+, or rather 
+\begin_inset Quotes eld
+\end_inset
+
+quantity line
+\begin_inset Quotes erd
+\end_inset
+
+, may be responsible for the human sense of numbers.
+ This is why I suggest visualizing Bayesian evidence as sliding the probability
+ along the number line; my hope is that this will translate Bayesian reasoning
+ into something that makes sense to innate human brainware.
+ (That, really, is what an 
+\begin_inset Quotes eld
+\end_inset
+
+intuitive explanation
+\begin_inset Quotes erd
+\end_inset
+
+ is.) For more information, see Stanislas Dehaene's 
+\emph on
+The Number Sense
+\emph default
+.
+\end_layout
+
+\end_body
+\end_document
