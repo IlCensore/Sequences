@@ -408,13 +408,21 @@ Ah, but since I have hope, I'll work a little harder at my job, pump up
 
  At this point, we have to drag in Bayes's Theorem
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 \emph on
 An Intuitive Explanation of Bayes' Theorem
 \emph default
+, p.
+ 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:An-Intuitive-Explanation"
+
+\end_inset
+
 .
 \end_layout
 

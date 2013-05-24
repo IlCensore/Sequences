@@ -342,21 +342,16 @@ thispagestyle{empty}
 \end_inset
 
 
-\size footnotesize
-\lang english
-Harry Potter © J.K.
- Rowling.
 \end_layout
 
 \begin_layout Standard
 
 \size footnotesize
 \emph on
-Harry Potter and the Methods of Rationality
+Sequences
 \emph default
- © E.
- Yukowsky.
- Testo scaricato da 
+ © 2006--2007 Eliezer Yukowsky.
+ Text from 
 \begin_inset ERT
 status open
 
@@ -364,108 +359,11 @@ status open
 
 
 \backslash
-url{hpmor.com}
+url{http://wiki.lesswrong.com/wiki/Map_and_Territory_%28sequence%29}
 \end_layout
 
 \end_inset
 
- il 16 marzo 2013; controllate il sito per aggiornamenti e nuovi capitoli.
-\end_layout
-
-\begin_layout Standard
-
-\size footnotesize
-Illustrazioni 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-reflectbox{©}
-\end_layout
-
-\end_inset
-
- Dinosaurusgede (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-url{dinosaurusgede.deviantart.com}
-\end_layout
-
-\end_inset
-
-), rilasciate sotto licenza Creative Commons Attribution-Non commercial
- 3.0.
-\end_layout
-
-\begin_layout Standard
-
-\size footnotesize
-Traduzione italiana 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-reflectbox{©}
-\end_layout
-
-\end_inset
-
- Cato Philosophus (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-url{cato.philosophus@gmail.com}
-\end_layout
-
-\end_inset
-
-), rilasciata sotto licenza Creative Commons Attribution-Share Alike 3.0.
- Aggiornamenti sul sito 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-url{sites.google.com/site/hpeimdr/home}
-\end_layout
-
-\end_inset
-
-.
- Composto con LyX & 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-LaTeX
-\end_layout
-
-\end_inset
-
-, usando Linux Libertine e 
-\family sans
-Purisa
-\family default
 .
 \end_layout
 
@@ -565,16 +463,6 @@ Map and Territory
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "0101-the-simple-truth.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
 filename "0102whatDoWeMeanByRationality.lyx"
 
 \end_inset
@@ -585,7 +473,7 @@ filename "0102whatDoWeMeanByRationality.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "0104whyTruthAnd.lyx"
+filename "0103anIntuitiveExplanationOfBayesTheorem.lyx"
 
 \end_inset
 

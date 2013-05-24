@@ -165,10 +165,14 @@ happening differently for different possible states of the target
 Let's start with a question simple enough to be mathematical: how hard would
  you have to entangle yourself with the lottery
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Lotteries: A Waste of Hope (sequence 
+
+\emph on
+Lotteries: A Waste of Hope
+\emph default
+ (sequence 
 \emph on
 Challenging the Difficult
 \emph default
