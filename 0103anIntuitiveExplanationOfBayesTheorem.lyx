@@ -278,7 +278,7 @@ And let's begin.
 
 \lang italian
 \begin_inset Graphics
-	filename ../HPeiMdR/fleur.png
+	filename fleur.png
 	scale 50
 
 \end_inset
@@ -1745,6 +1745,378 @@ intuitive explanation
 The Number Sense
 \emph default
 .
+\end_layout
+
+\begin_layout Standard
+A study by Gigerenzer and Hoffrage in 1995 showed that some ways of phrasing
+ story problems are much more evocative of correct Bayesian reasoning.
+ The 
+\emph on
+least
+\emph default
+ evocative phrasing used probabilities.
+ A slightly more evocative phrasing used frequencies instead of probabilities;
+ the problem remained the same, but instead of saying that 1% of women had
+ breast cancer, one would say that 1 out of 100 women had breast cancer,
+ that 80 out of 100 women with breast cancer would get a positive mammography,
+ and so on.
+ Why did a higher proportion of subjects display Bayesian reasoning on this
+ problem? Probably because saying 
+\begin_inset Quotes eld
+\end_inset
+
+1 out of 100 women
+\begin_inset Quotes erd
+\end_inset
+
+ encourages you to concretely visualize X women with cancer, leading you
+ to visualize X women with cancer and a positive mammography, etc.
+\end_layout
+
+\begin_layout Standard
+The most effective presentation found so far is what's known as 
+\emph on
+natural frequencies
+\emph default
+ -- saying that 40 out of 100 eggs contain pearls, 12 out of 40 eggs containing
+ pearls are painted blue, and 6 out of 60 eggs containing nothing are painted
+ blue.
+ A 
+\emph on
+natural frequencies
+\emph default
+ presentation is one in which the information about the prior probability
+ is included in presenting the conditional probabilities.
+ If you were just learning about the eggs' conditional probabilities through
+ natural experimentation, you would -- in the course of cracking open a
+ hundred eggs -- crack open around 40 eggs containing pearls, of which 12
+ eggs would be painted blue, while cracking open 60 eggs containing nothing,
+ of which about 6 would be painted blue.
+ In the course of learning the conditional probabilities, you'd see examples
+ of blue eggs containing pearls about twice as often as you saw examples
+ of blue eggs containing nothing.
+\end_layout
+
+\begin_layout Standard
+It may seem like presenting the problem in this way is 
+\begin_inset Quotes eld
+\end_inset
+
+cheating
+\begin_inset Quotes erd
+\end_inset
+
+, and indeed if it were a story problem in a math book, it probably 
+\emph on
+would
+\emph default
+ be cheating.
+ However, if you're talking about real doctors, you 
+\emph on
+want
+\emph default
+ to cheat; you want the doctors to draw the right conclusions as easily
+ as possible.
+ The obvious next move would be to present all medical statistics in terms
+ of natural frequencies.
+ Unfortunately, while natural frequencies are a step in the right direction,
+ it probably won't be enough.
+ When problems are presented in natural frequences, the proportion of people
+ using Bayesian reasoning rises to around half.
+ A big improvement, but not big enough when you're talking about real doctors
+ and real patients.
+\end_layout
+
+\begin_layout Quote
+\align center
+
+\lang italian
+\begin_inset Graphics
+	filename fleur.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+What makes ordinary mammography a 
+\emph on
+positive
+\emph default
+ indicator for breast cancer is not that someone 
+\emph on
+named
+\emph default
+ the result 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+, but rather that the test result stands in a specific Bayesian relation
+ to the condition of breast cancer.
+ You could call the same result 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+negative
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+blue
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+red
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+James Rutherford
+\begin_inset Quotes erd
+\end_inset
+
+, or give it no name at all, and the test result would still slide the probabili
+ty in exactly the same way.
+ To minimize confusion, a test result which slides the probability of breast
+ cancer upward should be called 
+\begin_inset Quotes eld
+\end_inset
+
+positive
+\begin_inset Quotes erd
+\end_inset
+
+.
+ A test result which slides the probability of breast cancer downward should
+ be called 
+\begin_inset Quotes eld
+\end_inset
+
+negative
+\begin_inset Quotes erd
+\end_inset
+
+.
+ If the test result is statistically unrelated to the presence or absence
+ of breast cancer -- if the two conditional probabilities are equal -- then
+ we shouldn't call the procedure a 
+\begin_inset Quotes eld
+\end_inset
+
+cancer test
+\begin_inset Quotes erd
+\end_inset
+
+! The 
+\emph on
+meaning
+\emph default
+ of the test is determined by the two conditional probabilities; any names
+ attached to the results are simply convenient labels.
+\end_layout
+
+\begin_layout Quote
+\align center
+\begin_inset Graphics
+	filename fleur.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The probability that a test gives a true positive divided by the probability
+ that a test gives a false positive
+\emph default
+ is known as the 
+\emph on
+likelihood ratio
+\emph default
+ of that test.
+ Does the likelihood ratio of a medical test sum up everything there is
+ to know about the usefulness of the test?
+\end_layout
+
+\begin_layout Standard
+No, it does not! The likelihood ratio sums up everything there is to know
+ about the 
+\emph on
+meaning
+\emph default
+ of a 
+\emph on
+positive
+\emph default
+ result on the medical test, but the meaning of a 
+\emph on
+negative
+\emph default
+ result on the test is not specified, nor is the frequency with which the
+ test is useful.
+ If we examine the algebra above, while 
+\begin_inset Formula $p(pearl|blue)$
+\end_inset
+
+ remains constant, 
+\begin_inset Formula $p(pearl|¬blue)$
+\end_inset
+
+ may change -- the X does not cancel out.
+ As a story problem, this strange fact would look something like this:
+\end_layout
+
+\begin_layout Quote
+Suppose that there are two barrels, each containing a number of plastic
+ eggs.
+ In both barrels, 40% of the eggs contain pearls and the rest contain nothing.
+ In both barrels, some eggs are painted blue and the rest are painted red.
+ In the first barrel, 30% of the eggs with pearls are painted blue, and
+ 10% of the empty eggs are painted blue.
+ In the second barrel, 90% of the eggs with pearls are painted blue, and
+ 30% of the empty eggs are painted blue.
+ Would you rather have a blue egg from the first or second barrel? Would
+ you rather have a red egg from the first or second barrel?
+\end_layout
+
+\begin_layout Standard
+For the first question, the answer is that we don't care whether we get
+ the blue egg from the first or second barrel.
+ For the second question, however, the probabilities 
+\emph on
+do
+\emph default
+ change -- in the first barrel, 34% of the red eggs contain pearls, while
+ in the second barrel 8.7% of the red eggs contain pearls! Thus, we should
+ prefer to get a red egg from the first barrel.
+ In the first barrel, 70% of the pearl eggs are painted red, and 90% of
+ the empty eggs are painted red.
+ In the second barrel, 10% of the pearl eggs are painted red, and 70% of
+ the empty eggs are painted red.
+\end_layout
+
+\begin_layout Standard
+What goes on here? We start out by noting that, counter to intuition, 
+\begin_inset Formula $p(pearl|blue)$
+\end_inset
+
+ and 
+\begin_inset Formula $p(pearl|\text{¬}blue)$
+\end_inset
+
+ have two degrees of freedom among them even when 
+\begin_inset Formula $p(pearl)$
+\end_inset
+
+ is fixed -- so there's no reason why one quantity shouldn't change while
+ the other remains constant.
+ But we didn't we just get through establishing a law for 
+\begin_inset Quotes eld
+\end_inset
+
+Conservation of Probability
+\begin_inset Quotes erd
+\end_inset
+
+, which says that 
+\begin_inset Formula $p(pearl|blue)*p(blue)+p(pearl|\text{¬}blue)*p(\text{¬}blue)=p(pearl)$
+\end_inset
+
+? Doesn't this equation take up one degree of freedom? No, because 
+\begin_inset Formula $p(blue)$
+\end_inset
+
+ isn't fixed between the two problems.
+ In the second barrel, the proportion of blue eggs containing pearls is
+ the same as in the first barrel, but a much larger fraction of eggs are
+ painted blue! This alters the set of 
+\emph on
+red
+\emph default
+ eggs in such a way that the proportions 
+\emph on
+do
+\emph default
+ change.
+\end_layout
+
+\begin_layout Quote
+\align center
+\begin_inset Graphics
+	filename fleur.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's return to the example of a medical test.
+ The likelihood ratio of a medical test -- the number of true positives
+ divided by the number of false positives -- tells us everything there is
+ to know about the 
+\emph on
+meaning
+\emph default
+ of a 
+\emph on
+positive
+\emph default
+ result.
+ But it doesn't tell us the meaning of a negative result, and it doesn't
+ tell us how often the test is useful.
+ For example, a mammography with a hit rate of 80% for patients with breast
+ cancer and a false positive rate of 9.6% for healthy patients has the same
+ likelihood ratio as a test with an 8% hit rate and a false positive rate
+ of 0.96%.
+ Although these two tests have the same likelihood ratio, the first test
+ is more useful in every way -- it detects disease more often, and a negative
+ result is stronger evidence of health.
+\end_layout
+
+\begin_layout Standard
+The likelihood ratio for a positive result summarizes the differential pressure
+ of the two conditional probabilities for a positive result, and thus summarizes
+ how much a positive result will slide the prior probability.
+\end_layout
+
+\begin_layout Standard
+If the prior probability is 1%, then knowing only the likelihood ratio is
+ enough to determine the posterior probability after a positive result.
+ Of course the likelihood ratio 
+\emph on
+can't
+\emph default
+ tell the whole story; the likelihood ratio and the prior probability together
+ are only two numbers, while the problem has three degrees of freedom.
 \end_layout
 
 \end_body
